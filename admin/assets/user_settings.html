@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Налаштування | Тур-транс</title>
+  <meta name="description"
+    content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="js/calendar/bootstrap_calendar.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+
+<body class="">
+  <section class="vbox">
+    <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+      <div class="navbar-header aside-md">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#" class="navbar-brand" data-toggle="fullscreen">
+          <img src="images/bussystem.png" class="m-r-sm header-images-bus">Bus System</a>
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div>
+      <ul class="nav navbar-nav hidden-xs">
+        <li class="dropdown">
+          <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon button-aside">
+            <i class="fa fa-angle-left text"></i>
+            <i class="fa fa-angle-right text-active"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count"></span>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
+        <li class="hidden-xs">
+          <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count">1</span>
+          </a>
+          <section class="dropdown-menu aside-xl">
+            <section class="panel bg-white">
+              <header class="panel-heading b-light bg-light">
+                <strong>У вас є <span class="count">1</span> сповіщення</strong>
+              </header>
+              <div class="list-group list-group-alt animated fadeInRight">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-sm text-center">
+                    <i class="fa fa-ticket fa-2x text-success"></i></span>
+                  <span class="media-body block m-b-none"> Долина - Варшава
+                    <br><small class="text-muted"> 15 хвилин тому</small></span>
+                </a>
+              </div>
+            </section>
+          </section>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+              <img src="images/admin.png">
+            </span>
+            ADMINISTRATOR <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">
+            <span class="arrow top"></span>
+            <li>
+              <a href="user_settings.html">Налаштування</a>
+            </li>
+            <li>
+              <a href="profile.html">Профіль</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="signin.html">Вийти</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
+          <section class="vbox">
+            <section class="w-f scrollable">
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px"
+                data-color="#333333">
+                <!-- nav -->
+                <nav class="nav-primary hidden-xs">
+                  <ul class="nav">
+                    <li class="wp-company">
+                      <a class="wp-company-name">
+                        <span>Тур-транс</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.html">
+                        <i class="fa fa-home">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Головна</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-book">
+                          <b class="bg-success"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Довідники</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li class="active">
+                          <a href="location_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Населені пункти</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="buses_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Автобуси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="options_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Опції автобуса</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="personnel_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Персонал</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="position_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Посади</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="roles.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник ролей</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="discounts.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник знижок (акцій)</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-globe">
+                          <b class="bg-warning"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Додавання рейсів</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="flight_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додані рейси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="flight_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати рейс</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-building-o">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Статистика квитків</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="tickets_reserved.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Заброньовані</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="tickets_paid.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Оплачені</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="information_for_the_site.html">
+                        <i class="fa fa-info-circle">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Інформація на сайті</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-users">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Пасажири</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="passengers_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд пасажирів</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="passengers_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати пасажира</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-smile-o">
+                          <b class="bg-danger"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Адміністратори</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="administrators_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="administrators_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- / nav -->
+              </div>
+            </section>
+          </section>
+        </aside>
+        <!-- /.aside -->
+
+        <section id="content">
+          <section class="vbox">
+            <header class="header bg-white b-b b-light">
+              <p>Налаштування</p>
+            </header>
+            <section class="scrollable wrapper">
+              <section class="panel panel-default user-profile">
+                <div class="panel-body">
+                  <form action="#">
+                    <div class="form-group row">
+                      <label for="ID_name" class="col-sm-3 control-label">ID</label>
+                      <div class="col-sm-9">
+                        <input name="ID_name" class="form-control" disabled type="number" type="text" id="id-parts"
+                          value="2244">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="firstname" class="col-sm-3 control-label">ПІБ *</label>
+                      <div class="col-sm-9">
+                        <input name="firstname" class="form-control" type="text" placeholder="Administrator" id="name">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 control-label">Посада *</label>
+                      <div class="col-sm-9">
+                        <select disabled name="account" class="form-control m-b">
+                          <option value="">--Виберіть посаду--</option>
+                          <option>Директор</option>
+                          <option>Бухгалтер</option>
+                          <option>Водій</option>
+                          <option>Механік</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="phone" class="col-sm-3 control-label">Номер телефону *</label>
+                      <div class="col-sm-9">
+                        <input name="phone" class="form-control" type="text" placeholder="+380508791458" id="phone">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="email" class="col-sm-3 control-label">Email *</label>
+                      <div class="col-sm-9">
+                        <input name="email" class="form-control" type="email" placeholder="admin@busSystem.com"
+                          id="email">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="preview" class="col-sm-3">Попередній перегляд</label>
+                      <div class="col-sm-9">
+                        <img src="http://bus-ticket.bdtask.com/bus_demo_v5/./assets/img/user/m2.png"
+                          class="img-thumbnail">
+                      </div>
+                      <input type="hidden" name="old_image" value=" ">
+                    </div>
+                    <div class="form-group row">
+                      <label for="image" class="col-sm-3">Зображення</label>
+                      <div class="col-sm-9">
+                        <input type="file" name="image" id="image" aria-describedby="fileHelp">
+                        <small id="fileHelp" class="text-muted"></small>
+                      </div>
+                    </div>
+                    <div class="form-group text-right wp-for-right-button">
+                      <button type="submit" class="btn btn-success">Зберегти</button>
+                    </div>
+                  </form>
+                </div>
+              </section>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <section class="panel panel-default user-profile">
+                    <header class="panel-heading font-bold">Змінити пароль</header>
+                    <div class="panel-body">
+                      <div class="form-group row">
+                        <label for="current-password" class="col-sm-5">Поточний пароль * </label>
+                        <div class="col-sm-7">
+                          <input id="current-password" class="form-control" type=current-password required>
+                        </div>
+                      </div>
+                      <form action="#" method=post
+                        oninput='up2.setCustomValidity(up2.value != up.value ? "Паролі не співпадають!" : "")'>
+                        <div class="form-group row">
+                          <label for="password" class="col-sm-5">Новий пароль: * </label>
+                          <div class="col-sm-7">
+                            <input id="password1" class="form-control" type=password required name=up>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="password" class="col-sm-5">Повтор нового пароля:</label>
+                          <div class="col-sm-7">
+                            <input id="password2" class="form-control" type=password name=up2>
+                          </div>
+                        </div>
+                        <div class="form-group text-right wp-for-right-button">
+                          <button type="submit" class="btn btn-success">Змінити</button>
+                        </div>
+                      </form>
+                    </div>
+                  </section>
+
+                </div>
+                <div class="col-sm-6">
+                </div>
+              </div>
+
+            </section>
+          </section>
+        </section>
+
+      </section>
+    </section>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+  <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.tooltip.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.resize.js"></script>
+  <script src="js/charts/flot/jquery.flot.grow.js"></script>
+  <script src="js/charts/flot/demo.js"></script>
+
+  <script src="js/calendar/bootstrap_calendar.js"></script>
+  <script src="js/calendar/demo.js"></script>
+
+  <script src="js/sortable/jquery.sortable.js"></script>
+  <script src="js/app.plugin.js"></script>
+</body>
+
+</html>

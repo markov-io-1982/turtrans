@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Персонал | Тур-транс</title>
+  <meta name="description"
+    content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="js/calendar/bootstrap_calendar.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.bootstrap.min.css"
+    type="text/css" />
+  <link rel="stylesheet" href="js/datatablesNew/buttons.dataTables.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+
+<body class="">
+  <section class="vbox">
+    <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+      <div class="navbar-header aside-md">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#" class="navbar-brand" data-toggle="fullscreen">
+          <img src="images/bussystem.png" class="m-r-sm header-images-bus">Bus System</a>
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div>
+      <ul class="nav navbar-nav hidden-xs">
+        <li class="dropdown">
+          <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon button-aside">
+            <i class="fa fa-angle-left text"></i>
+            <i class="fa fa-angle-right text-active"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count"></span>
+          </a>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
+        <li class="hidden-xs">
+          <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count">1</span>
+          </a>
+          <section class="dropdown-menu aside-xl">
+            <section class="panel bg-white">
+              <header class="panel-heading b-light bg-light">
+                <strong>У вас є <span class="count">1</span> сповіщення</strong>
+              </header>
+              <div class="list-group list-group-alt animated fadeInRight">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-sm text-center">
+                    <i class="fa fa-ticket fa-2x text-success"></i></span>
+                  <span class="media-body block m-b-none"> Долина - Варшава
+                    <br><small class="text-muted"> 15 хвилин тому</small></span>
+                </a>
+              </div>
+            </section>
+          </section>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+              <img src="images/admin.png">
+            </span>
+            ADMINISTRATOR <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">
+            <span class="arrow top"></span>
+            <li>
+              <a href="user_settings.html">Налаштування</a>
+            </li>
+            <li>
+              <a href="profile.html">Профіль</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="signin.html" data-toggle="ajaxModal">Вийти</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
+
+          <section class="vbox">
+
+            <section class="w-f scrollable">
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px"
+                data-color="#333333">
+
+                <!-- nav -->
+                <nav class="nav-primary hidden-xs">
+                  <ul class="nav">
+
+                    <li class="wp-company">
+                      <a class="wp-company-name">
+                        <span>Тур-транс</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.html">
+                        <i class="fa fa-home">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Головна</span>
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="#">
+                        <i class="fa fa-book">
+                          <b class="bg-success"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Довідники</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="location_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Населені пункти</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="buses_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Автобуси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="options_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Опції автобуса</span>
+                          </a>
+                        </li>
+                        <li class="active">
+                          <a href="personnel_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Персонал</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="position_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Посади</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="roles.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник ролей</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="discounts.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник знижок (акцій)</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-globe">
+                          <b class="bg-warning"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Додавання рейсів</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="flight_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додані рейси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="flight_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати рейс</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-building-o">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Статистика квитків</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="tickets_reserved.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Заброньовані</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="tickets_paid.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Оплачені</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="information_for_the_site.html">
+                        <i class="fa fa-info-circle">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Інформація на сайті</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-users">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Пасажири</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="passengers_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд пасажирів</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="passengers_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати пасажира</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-smile-o">
+                          <b class="bg-danger"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Адміністратори</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="administrators_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="administrators_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+
+                  </ul>
+                </nav>
+                <!-- / nav -->
+
+              </div>
+            </section>
+
+          </section>
+        </aside>
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable padder">
+
+              <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li>Довідники</li>
+                <li class="active">Персонал</li>
+              </ul>
+
+              <!-- .content -->
+              <div class="wp-datatables">
+
+                <section class="panel panel-default">
+                  <header class="panel-heading">
+                    Персонал
+                    <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom"
+                      data-title="ajax to load the data."></i>
+                  </header>
+                  <div class="table-responsive">
+                    <a href="#modal-form" class="btn btn-primary btn-md button-add-option" data-toggle="modal"
+                      data-backdrop="static" data-keyboard="false"><i class="fa fa-plus"></i>Додати</a>
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th width="10%">ID</th>
+                          <th width="10%">ПІБ</th>
+                          <th width="10">Посада</th>
+                          <th width="10%">Номер телефону</th>
+                          <th width="10%">Логін</th>
+                          <th width="10%">Email</th>
+                          <th width="10%">Роль</th>
+                          <th width="10%">Фото</th>
+                          <th width="10%">IP-адреса</th>
+                          <th width="10%">Останній вхід</th>
+                          <th width="10%">Останній вихід</th>
+                          <th width="10%">Статус <i class="fa fa-eye"></i></th>
+                          <th width="10%"> </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Kobir Hossain</td>
+                          <td>Директор</td>
+                          <td>+38050378941</td>
+                          <td>driver1</td>
+                          <td>wwwst@gmail.com</td>
+                          <td>Доступи водія №1</td> 
+                          <td><img src="http://bus-ticket.bdtask.com/bus_demo_v5/./assets/img/user/m.png"
+                              class="personnel-image" alt="Image"></td>
+                          <td>35.199.152.52</td>
+                          <td>2019-01-22 22:22:22</td>
+                          <td>2019-01-22 23:23:23</td>
+                          <td>
+                            <a href="#" class="active" data-toggle="class">
+                              <i class="fa fa-check text-success text-active"></i>
+                              <i class="fa fa-times text-danger text"></i></a>
+                          </td>
+                          <td>
+                            <a href="#modal-profile" class="btn btn-sm btn-default" data-toggle="modal"
+                              data-backdrop="static" data-keyboard="false">
+                              <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"
+                              data-original-title="Редагувати">
+                              <i class="fa fa-pencil" aria-hIDden="true"></i>
+                            </a>
+                            <a href="#" onclick="return confirm('Ви впевнені ?')" class="btn btn-danger btn-sm"
+                              data-toggle="tooltip" data-placement="left" data-original-title="Видалити">
+                              <i class="fa fa-trash-o"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Rabbani khan</td>
+                          <td>Бухгалтер</td>
+                          <td>+380638798584</td>
+                          <td>mechanic1</td>
+                          <td>rabbani@gmail.com </td>
+                          <td>Доступи директора №1</td>                          
+                          <td><img src="http://bus-ticket.bdtask.com/bus_demo_v5/assets/img/icons/default.jpg"
+                              class="personnel-image" alt="Image"></td>
+                          <td>162.158.155.122</td>
+                          <td>2019-01-14 09:36:57</td>
+                          <td>2019-01-14 16:25:12</td>
+                          <td>
+                            <a href="#" class="active" data-toggle="class">
+                              <i class="fa fa-check text-success text-active"></i>
+                              <i class="fa fa-times text-danger text"></i></a>
+                          </td>
+                          <td>
+                            <a href="#modal-profile" class="btn btn-sm btn-default" data-toggle="modal"
+                              data-backdrop="static" data-keyboard="false">
+                              <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"
+                              data-original-title="Редагувати">
+                              <i class="fa fa-pencil" aria-hIDden="true"></i>
+                            </a>
+                            <a href="#" onclick="return confirm('Ви впевнені ?')" class="btn btn-danger btn-sm"
+                              data-toggle="tooltip" data-placement="left" data-original-title="Видалити">
+                              <i class="fa fa-trash-o"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Arafat Hossain </td>
+                          <td>Бухгалтер</td>
+                          <td>+380952578951</td>
+                          <td>antonxxx</td>
+                          <td>arafat@gmail.com</td>
+                          <td>роль Директор (xxx)</td>
+                          <td><img src="http://bus-ticket.bdtask.com/bus_demo_v5/assets/img/icons/default.jpg"
+                              class="personnel-image" alt="Image"></td>
+                          <td>198.176.143.21</td>
+                          <td>2019-01-25 10:22:47</td>
+                          <td>2019-01-25 20:31:22</td>
+                          <td>
+                            <a href="#" class="active" data-toggle="class">
+                              <i class="fa fa-check text-success text-active"></i>
+                              <i class="fa fa-times text-danger text"></i></a>
+                          </td>
+                          <td>
+                            <a href="#modal-profile" class="btn btn-sm btn-default" data-toggle="modal"
+                              data-backdrop="static" data-keyboard="false">
+                              <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"
+                              data-original-title="Редагувати">
+                              <i class="fa fa-pencil" aria-hIDden="true"></i>
+                            </a>
+                            <a href="#" onclick="return confirm('Ви впевнені ?')" class="btn btn-danger btn-sm"
+                              data-toggle="tooltip" data-placement="left" data-original-title="Видалити">
+                              <i class="fa fa-trash-o"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Henry Smith</td>
+                          <td>Водій</td>
+                          <td>+380500000777</td>
+                          <td>katyaxxx</td>
+                          <td>johnny@example.com</td>
+                          <td>роль Додавач Рейсів (xxx)</td>
+                          <td><img
+                              src="data:image/jpeg;base64,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"
+                              class="personnel-image" alt="Image"></td>
+                          <td>144.144.144.44</td>
+                          <td>2019-01-14 08:54:27</td>
+                          <td>2019-01-14 19:19:54</td>
+                          <td>
+                            <a href="#" class="active" data-toggle="class">
+                              <i class="fa fa-check text-success text-active"></i>
+                              <i class="fa fa-times text-danger text"></i></a>
+                          </td>
+                          <td>
+                            <a href="#modal-profile" class="btn btn-sm btn-default" data-toggle="modal"
+                              data-backdrop="static" data-keyboard="false">
+                              <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"
+                              data-original-title="Редагувати">
+                              <i class="fa fa-pencil" aria-hIDden="true"></i>
+                            </a>
+                            <a href="#" onclick="return confirm('Ви впевнені ?')" class="btn btn-danger btn-sm"
+                              data-toggle="tooltip" data-placement="left" data-original-title="Видалити">
+                              <i class="fa fa-trash-o"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+              <!-- /.content -->
+
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <div class="modal fade adding-components form-add-item" id="modal-form">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="panel-heading">
+          <div class="panel-title">
+            Додати персонал
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+        </div>
+        <div class="panel-body">
+          <form action="#">
+
+            <div class="form-group row">
+              <label for="ID_name" class="col-sm-3 control-label">ID</label>
+              <div class="col-sm-9">
+                <input name="ID_name" class="form-control" disabled type="number" type="text" id="id-parts"
+                  value="3456545445">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="firstname" class="col-sm-3 control-label">ПІБ *</label>
+              <div class="col-sm-9">
+                <input name="firstname" class="form-control" type="text" placeholder="ПІБ" id="name" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 control-label">Посада *</label>
+              <div class="col-sm-9">
+                <select name="account" class="form-control m-b" required>
+                  <option value="">--Виберіть посаду--</option>
+                  <option>Директор</option>
+                  <option>Бухгалтер</option>
+                  <option>Водій</option>
+                  <option>Механік</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="phone" class="col-sm-3 control-label">Номер телефону *</label>
+              <div class="col-sm-9">
+                <input name="phone" class="form-control" type="text" placeholder="Номер телефону" id="phone" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 control-label">Email *</label>
+              <div class="col-sm-9">
+                <input name="email" class="form-control" type="email" placeholder="Email" id="email" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="login-user" class="col-sm-3 control-label">Логін *</label>
+              <div class="col-sm-9">
+                <input name="login-user" class="form-control" type="text" placeholder="Логін" id="login-user" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="password" class="col-sm-3 control-label">Пароль *</label>
+              <div class="col-sm-9">
+                <input name="password" class="form-control" type="password" placeholder="Пароль" id="password" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="image_name" class="col-sm-3 control-label">Фото</label>
+              <div class="col-sm-9">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <img src="http://bus-ticket.bdtask.com/bus_demo_v5/./assets/img/icons/default.jpg"
+                      class="img-thumbnail">
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="file" name="image_name" id="image_name" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="text-muted"></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="status_name" class="col-sm-3 control-label">Статус *</label>
+              <div class="col-sm-9">
+                <label class="radio-inline">
+                  <input type="radio" name="status_name" value="1" id="status" required>
+                  Активний
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="status_name" value="0" id="status" required>
+                  Неактивний
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 control-label">Ролі *</label>
+              <div class="col-sm-9">
+                <select name="account" class="form-control m-b" required>
+                  <option value="">--Виберіть посаду--</option>
+                  <option>Доступи водія №1</option>
+                  <option>Доступи директора №1</option>
+                  <option>роль Директор (xxx)</option>
+                  <option>роль Додавач Рейсів (xxx)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group text-right wp-for-right-button">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Закрити</button>
+              <button type="submit" class="btn btn-success">Додати</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade adding-components" id="modal-profile">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="panel-body">
+          <div class="panel-body user-profile">
+            <div class="user-header">
+              <img src="http://bus-ticket.bdtask.com/bus_demo_v5/./assets/img/user/m2.png" class="img-thumbnail"
+                alt="User Image" heigt="200">
+            </div>
+            <div class="h3 m-t-xs m-b-xs">John Smith</div>
+          </div>
+          <hr />
+          <dl class="dl-horizontal">
+            <dt>ID </dt>
+            <dd>2244</dd>
+            <dt>Посада </dt>
+            <dd>Адміністратор</dd>
+            <dt>Номер телефону</dt>
+            <dd>+38050879145</dd>
+            <dt>Email</dt>
+            <dd>admin@busSystem.com</dd>
+            <br>
+            <dt>IP-адреса</dt>
+            <dd>35.199.152.52</dd>
+            <dt>Останній вхід</dt>
+            <dd>2019-01-14 09:36:57</dd>
+            <dt>Останній вихід</dt>
+            <dd>2019-01-14 16:25:12</dd>
+          </dl>
+          <div class="form-group text-right wp-for-right-button">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Закрити</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+  <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.tooltip.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.resize.js"></script>
+  <script src="js/charts/flot/jquery.flot.grow.js"></script>
+
+  <!-- table   -->
+  <script src="js/datatablesNew/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.flash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.colVis.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      document.title = 'Персонал';
+      // DataTable initialisation
+      $('#example').DataTable(
+        {
+          "dom": "<'row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+          buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
+
+        }
+      );
+    });
+
+  </script>
+  <!-- table   -->
+
+  <script src="js/charts/flot/demo.js"></script>
+  <script src="js/calendar/bootstrap_calendar.js"></script>
+  <script src="js/sortable/jquery.sortable.js"></script>
+  <script src="js/app.plugin.js"></script>
+</body>
+
+</html>

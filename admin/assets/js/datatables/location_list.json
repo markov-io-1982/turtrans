@@ -1,0 +1,172 @@
+{
+	"aaData": [
+		{
+			"ID": "1",
+			"city": "Болехів",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "2",
+			"city": "Бурштин",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "3",
+			"city": "Галич",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "4",
+			"city": "Городенка",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "5",
+			"city": "Долина",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "6",
+			"city": "Івано-Франківськ",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "7",
+			"city": "Калуш",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "8",
+			"city": "Коломия",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "9",
+			"city": "Косів",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "10",
+			"city": "Надвірна",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "11",
+			"city": "Рогатин",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "12",
+			"city": "Снятин",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "13",
+			"city": "Тисмениця",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "14",
+			"city": "Тлумач",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "15",
+			"city": "Долина",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "16",
+			"city": "Яремче",
+			"region": "Івано-Франківська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "17",
+			"city": "Львів",
+			"region": "Львівська",
+			"country": "Україна",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "18",
+			"city": "Wrocław",
+			"region": "Wrocławska",
+			"country": "Polska",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "19",
+			"city": "Poznań",
+			"region": "Poznańska",
+			"country": "Polska",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "20",
+			"city": "Warszawa",
+			"region": "Warszawska",
+			"country": "Polska",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		},
+		{
+			"ID": "21",
+			"city": "Łódź",
+			"region": "Łódzka",
+			"country": "Polska",
+			"display": "<a href=\"#\" class=\"active\" data-toggle=\"class\"><i class=\"fa fa-check text-success text-active display-icon\"><\/i><i class=\"fa fa-times text-danger text\"><\/i><\/a>",
+			"graediting_deletede": "<a href=\"#\" class=\"btn btn-info btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Update\"><i class=\"fa fa-pencil\" aria-hIDden=\"true\"><\/i><\/a><a href=\"#\" onclick=\"return confirm('Ви впевнені ? ')\" class=\"btn btn-danger btn-sm datatables-graediting-deletede\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"\" data-original-title=\"Delete \"><i class=\"fa fa-trash-o\" aria-hIDden=\"true\"><\/i><\/a> "
+		}
+	]
+}

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Автобуси | Тур-транс</title>
+  <meta name="description"
+    content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="js/select2/select2.css" type="text/css" />
+  <link rel="stylesheet" href="js/select2/theme.css" type="text/css" />
+  <link rel="stylesheet" href="js/calendar/bootstrap_calendar.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.bootstrap.min.css"
+    type="text/css" />
+  <link rel="stylesheet" href="js/datatablesNew/buttons.dataTables.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+
+<body class="">
+  <section class="vbox">
+    <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+      <div class="navbar-header aside-md">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#" class="navbar-brand" data-toggle="fullscreen">
+          <img src="images/bussystem.png" class="m-r-sm header-images-bus">Bus System</a>
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div>
+      <ul class="nav navbar-nav hidden-xs">
+        <li class="dropdown">
+          <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon button-aside">
+            <i class="fa fa-angle-left text"></i>
+            <i class="fa fa-angle-right text-active"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count"></span>
+          </a>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
+        <li class="hidden-xs">
+          <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count">1</span>
+          </a>
+          <section class="dropdown-menu aside-xl">
+            <section class="panel bg-white">
+              <header class="panel-heading b-light bg-light">
+                <strong>У вас є <span class="count">1</span> сповіщення</strong>
+              </header>
+              <div class="list-group list-group-alt animated fadeInRight">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-sm text-center">
+                    <i class="fa fa-ticket fa-2x text-success"></i></span>
+                  <span class="media-body block m-b-none"> Долина - Варшава
+                    <br><small class="text-muted"> 15 хвилин тому</small></span>
+                </a>
+              </div>
+            </section>
+          </section>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+              <img src="images/admin.png">
+            </span>
+            ADMINISTRATOR <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">
+            <span class="arrow top"></span>
+            <li>
+              <a href="user_settings.html">Налаштування</a>
+            </li>
+            <li>
+              <a href="profile.html">Профіль</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="signin.html">Вийти</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
+
+          <section class="vbox">
+
+            <section class="w-f scrollable">
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px"
+                data-color="#333333">
+
+                <!-- nav -->
+                <nav class="nav-primary hidden-xs">
+                  <ul class="nav">
+
+                    <li class="wp-company">
+                      <a class="wp-company-name">
+                        <span>Тур-транс</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.html">
+                        <i class="fa fa-home">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Головна</span>
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="#">
+                        <i class="fa fa-book">
+                          <b class="bg-success"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Довідники</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="location_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Населені пункти</span>
+                          </a>
+                        </li>
+                        <li class="active">
+                          <a href="buses_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Автобуси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="options_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Опції автобуса</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="personnel_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Персонал</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="position_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Посади</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="roles.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник ролей</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="discounts.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник знижок (акцій)</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-globe">
+                          <b class="bg-warning"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Додавання рейсів</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="flight_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додані рейси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="flight_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати рейс</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-building-o">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Статистика квитків</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="tickets_reserved.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Заброньовані</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="tickets_paid.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Оплачені</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="information_for_the_site.html">
+                        <i class="fa fa-info-circle">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Інформація на сайті</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-users">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Пасажири</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="passengers_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд пасажирів</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="passengers_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати пасажира</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-smile-o">
+                          <b class="bg-danger"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Адміністратори</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="administrators_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="administrators_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+
+                  </ul>
+                </nav>
+                <!-- / nav -->
+
+              </div>
+            </section>
+
+          </section>
+        </aside>
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable padder">
+
+              <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li>Довідники</li>
+                <li class="active">Автобуси</li>
+              </ul>
+
+              <!-- .content -->
+              <div class="wp-datatables">
+
+                <section class="panel panel-default">
+                  <header class="panel-heading">
+                    Автобуси
+                    <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom"
+                      data-title="ajax to load the data."></i>
+                  </header>
+                  <div class="table-responsive">
+                    <a href="#modal-form" class="btn btn-primary btn-md button-add-option" data-toggle="modal"
+                      data-backdrop="static" data-keyboard="false"><i class="fa fa-plus"></i>
+                      Додати</a>
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th width="10%">ID</th>
+                          <th width="20%">Марка автобуса</th>
+                          <th width="20%">Модель автобуса</th>
+                          <th width="10%">Номер автобуса</th>
+                          <th width="10%">Кількість місць</th>
+                          <th width="15%">Опції автобуса</th>
+                          <th width="5%">Статус <i class="fa fa-eye"></i></th>
+                          <th width="10%"> </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Scania</td>
+                          <td>irizar</td>
+                          <td>АТ1287АМ</td>
+                          <td>123</td>
+                          <td>Кава, wifi</td>
+                          <td>
+                            <a href="#" class="active" data-toggle="class">
+                              <i class="fa fa-check text-success text-active"></i>
+                              <i class="fa fa-times text-danger text"></i></a>
+                          </td>
+                          <td>
+                            <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"
+                              data-original-title="Редагувати">
+                              <i class="fa fa-pencil" aria-hIDden="true"></i>
+                            </a>
+                            <a href="#" onclick="return confirm('Ви впевнені ?')" class="btn btn-danger btn-sm"
+                              data-toggle="tooltip" data-placement="left" data-original-title="Видалити">
+                              <i class="fa fa-trash-o"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Mercedes-Benz</td>
+                          <td>Tourismo О-350 2001</td>
+                          <td>АТ1778АМ</td>
+                          <td>55</td>
+                          <td>Кава, wifi</td>
+                          <td>
+                            <a href="#" class="active" data-toggle="class">
+                              <i class="fa fa-check text-success text-active"></i>
+                              <i class="fa fa-times text-danger text"></i></a>
+                          </td>
+                          <td>
+                            <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"
+                              data-original-title="Редагувати">
+                              <i class="fa fa-pencil" aria-hIDden="true"></i>
+                            </a>
+                            <a href="#" onclick="return confirm('Ви впевнені ?')" class="btn btn-danger btn-sm"
+                              data-toggle="tooltip" data-placement="left" data-original-title="Видалити">
+                              <i class="fa fa-trash-o"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Neoplan</td>
+                          <td>N 1216 Cityliner 2012</td>
+                          <td>АТ3267АМ</td>
+                          <td>46</td>
+                          <td>Кава, wifi</td>
+                          <td>
+                            <a href="#" class="active" data-toggle="class">
+                              <i class="fa fa-check text-success text-active"></i>
+                              <i class="fa fa-times text-danger text"></i></a>
+                          </td>
+                          <td>
+                            <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left"
+                              data-original-title="Редагувати">
+                              <i class="fa fa-pencil" aria-hIDden="true"></i>
+                            </a>
+                            <a href="#" onclick="return confirm('Ви впевнені ?')" class="btn btn-danger btn-sm"
+                              data-toggle="tooltip" data-placement="left" data-original-title="Видалити">
+                              <i class="fa fa-trash-o"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+
+              <!-- /.content -->
+
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+  <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.tooltip.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.resize.js"></script>
+  <script src="js/charts/flot/jquery.flot.grow.js"></script>
+
+  <!-- table   -->
+  <script src="js/datatablesNew/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.flash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.colVis.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      document.title = 'Автобуси';
+      // DataTable initialisation
+      $('#example').DataTable(
+        {
+          "dom": "<'row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+          buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
+
+        }
+      );
+    });
+
+  </script>
+  <!-- table   -->
+
+  <script src="js/charts/flot/demo.js"></script>
+  <!-- select2 -->
+  <script src="js/select2/select2.min.js"></script>
+  <script src="js/calendar/bootstrap_calendar.js"></script>
+  <script src="js/sortable/jquery.sortable.js"></script>
+  <script src="js/app.plugin.js"></script>
+
+  <div class="modal fade adding-components" id="modal-form">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="panel-heading">
+          <div class="panel-title">
+            Додати автобус
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+        </div>
+        <div class="panel-body">
+          <form action="#">
+            <div class="form-group row">
+              <label for="ID-name" class="col-sm-3 control-label">ID</label>
+              <div class="col-sm-9">
+                <input name="ID-name" class="form-control" disabled type="number" type="text" id="ID-name"
+                  value="978787985">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="brand-bus" class="col-sm-3 control-label">Марка автобуса *</label>
+              <div class="col-sm-9">
+                <input name="brand-bus" class="form-control" type="text" placeholder="Марка автобуса" id="brand-bus"
+                  required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="model-bus" class="col-sm-3 control-label">Модель автобуса *</label>
+              <div class="col-sm-9">
+                <input name="model-bus" class="form-control" type="text" placeholder="Модель автобуса" id="model-bus"
+                  required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="bus-number" class="col-sm-3 control-label">Номер автобуса *</label>
+              <div class="col-sm-9">
+                <input name="bus-number" class="form-control" type="text" placeholder="Номер автобуса" id="bus-number">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="number-seats" class="col-sm-3 control-label">Кількість місць</label>
+              <div class="col-sm-9">
+                <input name="number-seats" class="form-control" type="text" placeholder="Кількість місць"
+                  id="number-seats">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 control-label">Опції автобуса</label>
+              <div class="col-sm-9">
+                <input type="hidden" id="busOptions" value="Чай" />
+                <script>
+                  // busOptions 
+                  if ($.fn.select2) {
+                    $("#select2-option").select2();
+                    $("#busOptions").select2({
+                      tags: ["Туалет", "Кава", "wifi"],
+                      tokenSeparators: [",", " "]
+                    }
+                    );
+                  }
+                </script>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="status_name" class="col-sm-3 control-label">Статус *</label>
+              <div class="col-sm-9">
+                <label class="radio-inline">
+                  <input type="radio" name="status_name" value="1" id="status" required>
+                  Активний
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="status_name" value="0" id="status" required>
+                  Неактивний
+                </label>
+              </div>
+            </div>
+            <div class="form-group text-right wp-for-right-button">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Закрити</button>
+              <button type="submit" class="btn btn-success">Додати</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

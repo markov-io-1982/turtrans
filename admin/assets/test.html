@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Bus System | Тур-транс</title>
+  <meta name="description"
+    content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="js/calendar/bootstrap_calendar.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+
+<body class="">
+  <section class="vbox">
+    <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+      <div class="navbar-header aside-md">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#" class="navbar-brand" data-toggle="fullscreen">
+          <img src="images/bussystem.png" class="m-r-sm header-images-bus">Bus System</a>
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div>
+      <ul class="nav navbar-nav hidden-xs">
+        <li class="dropdown">
+          <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon button-aside">
+            <i class="fa fa-angle-left text"></i>
+            <i class="fa fa-angle-right text-active"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count"></span>
+          </a>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
+        <li class="hidden-xs">
+          <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count">1</span>
+          </a>
+          <section class="dropdown-menu aside-xl">
+            <section class="panel bg-white">
+              <header class="panel-heading b-light bg-light">
+                <strong>У вас є <span class="count">1</span> сповіщення</strong>
+              </header>
+              <div class="list-group list-group-alt animated fadeInRight">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-sm text-center">
+                    <i class="fa fa-ticket fa-2x text-success"></i></span>
+                  <span class="media-body block m-b-none"> Долина - Варшава
+                    <br><small class="text-muted"> 15 хвилин тому</small></span>
+                </a>
+              </div>
+            </section>
+          </section>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+              <img src="images/admin.png">
+            </span>
+            ADMINISTRATOR <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">
+            <span class="arrow top"></span>
+            <li>
+              <a href="user_settings.html">Налаштування</a>
+            </li>
+            <li>
+              <a href="profile.html">Профіль</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="signin.html">Вийти</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
+
+          <section class="vbox">
+            <!-- <header class="header bg-primary lter text-center clearfix">
+              <a href="#" class="navbar-brand" data-toggle="fullscreen">Тур-транс</a>
+            </header> -->
+
+            <section class="w-f scrollable">
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px"
+                data-color="#333333">
+
+                <!-- nav -->
+                <nav class="nav-primary hidden-xs">
+                  <ul class="nav">
+
+                    <li class="wp-company">
+                      <a class="wp-company-name">
+                        <span>Тур-транс</span>
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="index.html">
+                        <i class="fa fa-home">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Головна</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-book">
+                          <b class="bg-success"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Довідники</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li class="active">
+                          <a href="location_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Населені пункти</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="buses_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Автобуси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="options_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Опції автобуса</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="personnel_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Персонал</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="position_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Посади</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="roles.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник ролей</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="discounts.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник знижок (акцій)</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-globe">
+                          <b class="bg-warning"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Додавання рейсів</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="flight_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додані рейси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="flight_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати рейс</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-building-o">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Статистика квитків</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="tickets_reserved.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Заброньовані</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="tickets_paid.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Оплачені</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="information_for_the_site.html">
+                        <i class="fa fa-info-circle">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Інформація на сайті</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-users">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Пасажири</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="passengers_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд пасажирів</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="passengers_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати пасажира</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-smile-o">
+                          <b class="bg-danger"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Адміністратори</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="administrators_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="administrators_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+
+                  </ul>
+                </nav>
+                <!-- / nav -->
+
+              </div>
+            </section>
+
+          </section>
+        </aside>
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable padder">
+
+              <div class="container">
+
+                <br<br><br><br>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <select name="from[]" id="multiselect" class="form-control" size="8" multiple="multiple">
+
+                   
+                      <option value="1">Львів - Варшава</option>
+                      <option value="2">Варшава - Краків</option>
+                      <option value="3">Варшава - Гданськ</option>
+                      <option value="4">ЛВаршава - Вроцлав</option>
+                      <option value="3">Варшава - Познань</option>
+                      <option value="3">Краків - Гданськ</option>
+
+
+                    </select>
+                  </div>
+
+                  <div class="col-xs-2">
+                    <button type="button" id="multiselect_rightAll" class="btn btn-block"><i
+                        class="fa fa-chevron-circle-right"></i>всі</button>
+                    <!-- <button type="button" id="multiselect_rightSelected" class="btn btn-block"><i
+                        class="fa fa-chevron-circle-right"></i>+1</button>
+                    <button type="button" id="multiselect_leftSelected" class="btn btn-block"><i
+                        class="fa fa-chevron-circle-left"></i>-1</button> -->
+                    <button type="button" id="multiselect_leftAll" class="btn btn-block"><i
+                        class="fa fa-chevron-circle-left"></i>всі</button>
+                  </div>
+
+                  <div class="col-xs-5">
+                    <select name="to[]" id="multiselect_to" class="form-control" size="8" multiple="multiple"></select>
+                  </div>
+                </div>
+
+              </div>
+
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+  <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.tooltip.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.resize.js"></script>
+  <script src="js/charts/flot/jquery.flot.grow.js"></script>
+  <script src="js/charts/flot/demo.js"></script>
+
+  <script src="js/calendar/bootstrap_calendar.js"></script>
+  <script src="js/calendar/demo.js"></script>
+
+  <script src="js/sortable/jquery.sortable.js"></script>
+  <script src="js/app.plugin.js"></script>
+
+  <script>
+
+    if ("undefined" == typeof jQuery) throw new Error("multiselect requires jQuery");
+    ! function (t) {
+      "use strict";
+      var e = t.fn.jquery.split(" ")[0].split(".");
+      if (e[0] < 2 && e[1] < 7) throw new Error("multiselect requires jQuery version 1.7 or higher")
+    }(jQuery),
+      function (t) {
+        "function" == typeof define && define.amd ? define(["jquery"], t) : t(jQuery)
+      }(function (t) {
+        "use strict";
+        var e = function (t) {
+          function e(e, o) {
+            var i = e.prop("id");
+            this.$left = e, this.$right = t(t(o.right).length ? o.right : "#" + i + "_to"), this.actions = {
+              $leftAll: t(t(o.leftAll).length ? o.leftAll : "#" + i + "_leftAll"),
+              $rightAll: t(t(o.rightAll).length ? o.rightAll : "#" + i + "_rightAll"),
+              $leftSelected: t(t(o.leftSelected).length ? o.leftSelected : "#" + i + "_leftSelected"),
+              $rightSelected: t(t(o.rightSelected).length ? o.rightSelected : "#" + i + "_rightSelected"),
+              $undo: t(t(o.undo).length ? o.undo : "#" + i + "_undo"),
+              $redo: t(t(o.redo).length ? o.redo : "#" + i + "_redo")
+            }, delete o.leftAll, delete o.leftSelected, delete o.right, delete o.rightAll, delete o.rightSelected, this.options = {
+              keepRenderingSort: o.keepRenderingSort,
+              submitAllLeft: void 0 !== o.submitAllLeft ? o.submitAllLeft : !0,
+              submitAllRight: void 0 !== o.submitAllRight ? o.submitAllRight : !0,
+              search: o.search,
+              ignoreDisabled: void 0 !== o.ignoreDisabled ? o.ignoreDisabled : !1
+            }, delete o.keepRenderingSort, o.submitAllLeft, o.submitAllRight, o.search, o.ignoreDisabled, this.callbacks = o, this.init()
+          }
+          return e.prototype = {
+            init: function () {
+              var e = this;
+              e.undoStack = [], e.redoStack = [], (e.$left.find("optgroup").length || e.$right.find("optgroup").length) && (e.callbacks.sort = !1, e.options.search = !1), e.options.keepRenderingSort && (e.skipInitSort = !0, e.callbacks.sort !== !1 && (e.callbacks.sort = function (e, o) {
+                return t(e).data("position") > t(o).data("position") ? 1 : -1
+              }), e.$left.find("option").each(function (e, o) {
+                t(o).data("position", e)
+              }), e.$right.find("option").each(function (e, o) {
+                t(o).data("position", e)
+              })), "function" == typeof e.callbacks.startUp && e.callbacks.startUp(e.$left, e.$right), e.skipInitSort || "function" != typeof e.callbacks.sort || (e.$left.mSort(e.callbacks.sort), e.$right.each(function (o, i) {
+                t(i).mSort(e.callbacks.sort)
+              })), e.options.search && e.options.search.left && (e.options.search.$left = t(e.options.search.left), e.$left.before(e.options.search.$left)), e.options.search && e.options.search.right && (e.options.search.$right = t(e.options.search.right), e.$right.before(t(e.options.search.$right))), e.events()
+            },
+            events: function () {
+              var e = this;
+              e.options.search && e.options.search.$left && e.options.search.$left.on("keyup", function (t) {
+                if (this.value) {
+                  e.$left.find('option:search("' + this.value + '")').mShow(), e.$left.find('option:not(:search("' + this.value + '"))').mHide()
+                } else e.$left.find("option").mShow()
+              }), e.options.search && e.options.search.$right && e.options.search.$right.on("keyup", function (t) {
+                if (this.value) {
+                  e.$right.find('option:search("' + this.value + '")').mShow(), e.$right.find('option:not(:search("' + this.value + '"))').mHide()
+                } else e.$right.find("option").mShow()
+              }), e.$right.closest("form").on("submit", function (t) {
+                e.$left.find("option").prop("selected", e.options.submitAllLeft), e.$right.find("option").prop("selected", e.options.submitAllRight)
+              }), e.$left.on("click", "option", function (t) {
+                t.preventDefault();
+                var o = e.$left.find("option:selected");
+                o.length && e.moveToRight(o, t)
+              }), e.$left.on("keypress", function (t) {
+                if (13 === t.keyCode) {
+                  t.preventDefault();
+                  var o = e.$left.find("option:selected");
+                  o.length && e.moveToRight(o, t)
+                }
+              }), e.$right.on("click", "option", function (t) {
+                t.preventDefault();
+                var o = e.$right.find("option:selected");
+                o.length && e.moveToLeft(o, t)
+              }), e.$right.on("keydown", function (t) {
+                if (8 === t.keyCode || 46 === t.keyCode) {
+                  t.preventDefault();
+                  var o = e.$right.find("option:selected");
+                  o.length && e.moveToLeft(o, t)
+                }
+              }), (navigator.userAgent.match(/MSIE/i) || navigator.userAgent.indexOf("Trident/") > 0 || navigator.userAgent.indexOf("Edge/") > 0) && (e.$left.click(function (t) {
+                e.actions.$rightSelected.trigger("click")
+              }), e.$right.click(function (t) {
+                e.actions.$leftSelected.trigger("click")
+              })), e.actions.$rightSelected.on("click", function (o) {
+                o.preventDefault();
+                var i = e.$left.find("option:selected");
+                i.length && e.moveToRight(i, o), t(this).blur()
+              }), e.actions.$leftSelected.on("click", function (o) {
+                o.preventDefault();
+                var i = e.$right.find("option:selected");
+                i.length && e.moveToLeft(i, o), t(this).blur()
+              }), e.actions.$rightAll.on("click", function (o) {
+                o.preventDefault();
+                var i = e.$left.children(":not(span):not(.hidden)");
+                i.length && e.moveToRight(i, o), t(this).blur()
+              }), e.actions.$leftAll.on("click", function (o) {
+                o.preventDefault();
+                var i = e.$right.children(":not(span):not(.hidden)");
+                i.length && e.moveToLeft(i, o), t(this).blur()
+              }), e.actions.$undo.on("click", function (t) {
+                t.preventDefault(), e.undo(t)
+              }), e.actions.$redo.on("click", function (t) {
+                t.preventDefault(), e.redo(t)
+              })
+            },
+            moveToRight: function (e, o, i, n) {
+              var r = this;
+              return "function" == typeof r.callbacks.moveToRight ? r.callbacks.moveToRight(r, e, o, i, n) : "function" != typeof r.callbacks.beforeMoveToRight || i || r.callbacks.beforeMoveToRight(r.$left, r.$right, e) ? (e.each(function (e, o) {
+                var i = t(o);
+                if (r.options.ignoreDisabled && i.is(":disabled")) return !0;
+                if (i.parent().is("optgroup")) {
+                  var n = i.parent(),
+                    l = r.$right.find('optgroup[label="' + n.prop("label") + '"]');
+                  l.length || (l = n.clone(), l.children().remove()), i = l.append(i), n.removeIfEmpty()
+                }
+                r.$right.move(i)
+              }), n || (r.undoStack.push(["right", e]), r.redoStack = []), "function" != typeof r.callbacks.sort || i || r.$right.mSort(r.callbacks.sort), "function" != typeof r.callbacks.afterMoveToRight || i || r.callbacks.afterMoveToRight(r.$left, r.$right, e), r) : !1
+            },
+            moveToLeft: function (e, o, i, n) {
+              var r = this;
+              return "function" == typeof r.callbacks.moveToLeft ? r.callbacks.moveToLeft(r, e, o, i, n) : "function" != typeof r.callbacks.beforeMoveToLeft || i || r.callbacks.beforeMoveToLeft(r.$left, r.$right, e) ? (e.each(function (e, o) {
+                var i = t(o);
+                if (i.is("optgroup") || i.parent().is("optgroup")) {
+                  var n = i.is("optgroup") ? i : i.parent(),
+                    l = r.$left.find('optgroup[label="' + n.prop("label") + '"]');
+                  l.length || (l = n.clone(), l.children().remove()), i = l.append(i.is("optgroup") ? i.children() : i), n.removeIfEmpty()
+                }
+                r.$left.move(i)
+              }), n || (r.undoStack.push(["left", e]), r.redoStack = []), "function" != typeof r.callbacks.sort || i || r.$left.mSort(r.callbacks.sort), "function" != typeof r.callbacks.afterMoveToLeft || i || r.callbacks.afterMoveToLeft(r.$left, r.$right, e), r) : !1
+            },
+            undo: function (t) {
+              var e = this,
+                o = e.undoStack.pop();
+              if (o) switch (e.redoStack.push(o), o[0]) {
+                case "left":
+                  e.moveToRight(o[1], t, !1, !0);
+                  break;
+                case "right":
+                  e.moveToLeft(o[1], t, !1, !0)
+              }
+            },
+            redo: function (t) {
+              var e = this,
+                o = e.redoStack.pop();
+              if (o) switch (e.undoStack.push(o), o[0]) {
+                case "left":
+                  e.moveToLeft(o[1], t, !1, !0);
+                  break;
+                case "right":
+                  e.moveToRight(o[1], t, !1, !0)
+              }
+            }
+          }, e
+        }(t);
+        t.multiselect = {
+          defaults: {
+            startUp: function (t, e) {
+              e.find("option").each(function (e, o) {
+                var i = t.find('option[value="' + o.value + '"]'),
+                  n = i.parent();
+                i.remove(), "OPTGROUP" == n.prop("tagName") && n.removeIfEmpty()
+              })
+            },
+            beforeMoveToRight: function (t, e, o) {
+              return !0
+            },
+            afterMoveToRight: function (t, e, o) { },
+            beforeMoveToLeft: function (t, e, o) {
+              return !0
+            },
+            afterMoveToLeft: function (t, e, o) { },
+            sort: function (t, e) {
+              return "NA" == t.innerHTML ? 1 : "NA" == e.innerHTML ? -1 : t.innerHTML > e.innerHTML ? 1 : -1
+            }
+          }
+        };
+        var o = window.navigator.userAgent,
+          i = o.indexOf("MSIE ") + o.indexOf("Trident/") + o.indexOf("Edge/") > -3;
+        t.fn.multiselect = function (o) {
+          return this.each(function () {
+            var i = t(this),
+              n = i.data("crlcu.multiselect"),
+              r = t.extend({}, t.multiselect.defaults, i.data(), "object" == typeof o && o);
+            n || i.data("crlcu.multiselect", n = new e(i, r))
+          })
+        }, t.fn.move = function (t) {
+          return this.append(t).find("option").prop("selected", !1), this
+        }, t.fn.removeIfEmpty = function () {
+          return this.children().length || this.remove(), this
+        }, t.fn.mShow = function () {
+          return this.removeClass("hidden").show(), i && this.each(function (e, o) {
+            t(o).parent().is("span") && t(o).parent().replaceWith(o), t(o).show()
+          }), this
+        }, t.fn.mHide = function () {
+          return this.addClass("hidden").hide(), i && this.each(function (e, o) {
+            t(o).parent().is("span") || t(o).wrap("<span>").hide()
+          }), this
+        }, t.fn.mSort = function (t) {
+          return this.find("option").sort(t).appendTo(this), this
+        }, t.expr[":"].search = function (e, o, i) {
+          return t(e).text().toUpperCase().indexOf(i[3].toUpperCase()) >= 0
+        }
+      });
+
+    jQuery(document).ready(function ($) {
+      $('#multiselect').multiselect();
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Додавання рейсу | Тур-транс</title>
+  <meta name="description"
+    content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.bootstrap.min.css"
+    type="text/css" />
+  <link rel="stylesheet" href="js/select2/select2.css" type="text/css" />
+  <link rel="stylesheet" href="js/select2/theme.css" type="text/css" />
+  <link rel="stylesheet" href="js/calendar/bootstrap_calendar.css" type="text/css" />
+  <link rel="stylesheet" href="js/datepicker/datepicker2.css" type="text/css" />
+  <link rel="stylesheet" href="js/datepicker/datepicker3.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+
+  <style>
+    .datepicker--nav {
+      display: none !important;
+    }
+
+    .datepicker--content {
+      display: none !important;
+    }
+  </style>
+
+  <!--[if lt IE 9]>
+          <script src="js/ie/html5shiv.js"></script>
+          <script src="js/ie/respond.min.js"></script>
+          <script src="js/ie/excanvas.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <section class="vbox">
+    <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+      <div class="navbar-header aside-md">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#" class="navbar-brand" data-toggle="fullscreen">
+          <img src="images/bussystem.png" class="m-r-sm header-images-bus">Bus System</a>
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
+        <li class="hidden-xs">
+          <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count">1</span>
+          </a>
+          <section class="dropdown-menu aside-xl">
+            <section class="panel bg-white">
+              <header class="panel-heading b-light bg-light">
+                <strong>У вас є <span class="count">1</span> сповіщення</strong>
+              </header>
+              <div class="list-group list-group-alt animated fadeInRight">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-sm text-center">
+                    <i class="fa fa-ticket fa-2x text-success"></i></span>
+                  <span class="media-body block m-b-none"> Долина - Варшава
+                    <br><small class="text-muted"> 15 хвилин тому</small></span>
+                </a>
+              </div>
+            </section>
+          </section>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+              <img src="images/admin.png">
+            </span>
+            ADMINISTRATOR <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">
+            <span class="arrow top"></span>
+            <li>
+              <a href="user_settings.html">Налаштування</a>
+            </li>
+            <li>
+              <a href="profile.html">Профіль</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="signin.html">Вийти</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+    <section>
+      <section class="hbox stretch">
+
+        <!-- .aside -->
+        <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
+          <section class="vbox">
+            <section class="w-f scrollable">
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px"
+                data-color="#333333">
+                <!-- nav -->
+                <nav class="nav-primary hidden-xs">
+                  <ul class="nav">
+                    <li class="wp-company">
+                      <a class="wp-company-name">
+                        <span>Тур-транс</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.html">
+                        <i class="fa fa-home">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Головна</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-book">
+                          <b class="bg-success"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Довідники</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="location_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Населені пункти</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="buses_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Автобуси</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="options_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Опції автобуса</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="personnel_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Персонал</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="position_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Посади</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="roles.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник ролей</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="discounts.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Довідник знижок (акцій)</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="active">
+                      <a href="#">
+                        <i class="fa fa-globe">
+                          <b class="bg-warning"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Додавання рейсів</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="trips_list.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додані рейси</span>
+                          </a>
+                        </li>
+                        <li class="active">
+                          <a href="add_trips.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати рейс</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-building-o">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Статистика квитків</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="tickets_reserved.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Заброньовані</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="tickets_paid.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Оплачені</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="information_for_the_site.html">
+                        <i class="fa fa-info-circle">
+                          <b class="bg-info"></b>
+                        </i>
+                        <span>Інформація на сайті</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-users">
+                          <b class="bg-primary"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Пасажири</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="passengers_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд пасажирів</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="passengers_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати пасажира</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-smile-o">
+                          <b class="bg-danger"></b>
+                        </i>
+                        <span class="pull-right">
+                          <i class="fa fa-angle-down text"></i>
+                          <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>Адміністратори</span>
+                      </a>
+                      <ul class="nav lt">
+                        <li>
+                          <a href="administrators_view.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Перегляд</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="administrators_add.html">
+                            <i class="fa fa-angle-right"></i>
+                            <span>Додати</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- / nav -->
+              </div>
+            </section>
+
+            <footer class="footer lt hidden-xs b-t b-dark">
+              <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon">
+                <i class="fa fa-angle-left text"></i>
+                <i class="fa fa-angle-right text-active"></i>
+              </a>
+            </footer>
+          </section>
+        </aside>
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable padder">
+
+              <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                <li><a href="index.html"><i class="fa fa-home"></i> Головна</a></li>
+                <li class="active">Додавання рейсу</li>
+              </ul>
+
+              <div class="form-group text-right wp-for-right-button">
+                <button type="submit" class="btn btn-success">Зберегти</button>
+              </div>
+
+              <section class="panel panel-default main-wp-add-trips">
+                <header class="panel-heading bg-light">
+                  <ul class="nav nav-tabs nav-justified">
+                    <li class="active"><a href="#route-selection" data-toggle="tab">Вибір маршруту</a></li>
+                    <li><a href="#choice-of-bus" data-toggle="tab">Вибір автобуса</a></li>
+                    <li><a href="#cost-stock" data-toggle="tab">Вартість (акції)</a></li>
+                    <li><a href="#discount" data-toggle="tab">Дисконт</a></li>
+                  </ul>
+                </header>
+                <div class="panel-body">
+                  <div class="tab-content">
+                    <div class="tab-pane active wp-add-flight" id="route-selection">
+
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <section class="panel panel-default">
+                            <header class="panel-heading font-bold">Відправлення</header>
+                            <div class="panel-body">
+
+                              <div class="form-group row">
+                                <label for="role-name" class="col-lg-4 control-label">Місто відправлення </label>
+                                <div class="col-lg-8">
+                                  <select id="select2-option" class="select-option-item">
+                                    <option value="1">Болехів</option>
+                                    <option value="2">Бурштин</option>
+                                    <option value="3">Долина</option>
+                                    <option value="4">Калуш</option>
+                                    <option value="5">Łódź</option>
+                                    <option value="6">Wrocław</option>
+                                    <option value="7">Poznań</option>
+                                    <option value="8">Warszawa</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="role-name" class="col-lg-4 control-label">Відправлення з </label>
+                                <div class="col-lg-8">
+                                  <select id="select2-option" class="select-option-item">
+                                    <option value="1">Стрийський автовокзал вул. Стрийська 14а</option>
+                                    <option value="2">Автостанція вулиця Горбачевського, 14</option>
+                                    <option value="3">Приміський автовокзал вулиця Білогірська, 1</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-group row wp-last-row">
+                                <label for="discounts-name" class="col-lg-4 control-label">Виїзд о</label>
+                                <div class="col-lg-8">
+
+                                  <input id="inpt_time" class="timepicker form-control" type="time" name="time">
+
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <section class="panel panel-default">
+                            <header class="panel-heading font-bold">Прибуття</header>
+                            <div class="panel-body">
+                              <div class="form-group row">
+                                <label for="role-name" class="col-lg-4 control-label">Місто прибуття</label>
+                                <div class="col-lg-8">
+                                  <select id="select2-option" class="select-option-item">
+                                    <option value="1">Болехів</option>
+                                    <option value="2">Бурштин</option>
+                                    <option value="3">Долина</option>
+                                    <option value="4">Калуш</option>
+                                    <option value="5">Łódź</option>
+                                    <option value="6">Wrocław</option>
+                                    <option value="7">Poznań</option>
+                                    <option value="8">Warszawa</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="role-name" class="col-lg-4 control-label">Кінцева зупинка</label>
+                                <div class="col-lg-8">
+                                  <select id="select2-option" class="select-option-item">
+                                    <option value="1">Стрийський автовокзал вул. Стрийська 14а</option>
+                                    <option value="2">Автостанція вулиця Горбачевського, 14</option>
+                                    <option value="3">Приміський автовокзал вулиця Білогірська, 1</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-group row wp-last-row ">
+                                <label for="discounts-name" class="col-lg-4 control-label">Прибуття о</label>
+                                <div class="col-lg-8">
+                                  <input class="datepicker-here flight-datepicker form-control"
+                                    data-timepicker="true" />
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <section class="panel panel-default">
+                            <header class="panel-heading font-bold">Проміжні пункти</header>
+                            <div class="panel-body intermediate-points-body">
+
+                              <div class="wrapper-add-waypoint">
+                                <!-- dynamic -->
+                                <div class="form-group dynamic-element" style="display:none">
+                                  <div class="row wp-add-dynamic-element">
+                                    <div class="form-group row">
+                                      <label for="role-name" class="col-lg-4 control-label">Прямує з </label>
+                                      <div class="col-lg-8">
+                                        <select id="select2-option" class="select-option-item-dynamic">
+                                          <option value="0"></option>
+                                          <option value="1">Болехів</option>
+                                          <option value="2">Бурштин</option>
+                                          <option value="3">Долина</option>
+                                          <option value="4">Калуш</option>
+                                          <option value="5">Łódź</option>
+                                          <option value="6">Wrocław</option>
+                                          <option value="7">Poznań</option>
+                                          <option value="8">Warszawa</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="role-name" class="col-lg-4 control-label">Адреса зупинки </label>
+                                      <div class="col-lg-8">
+                                        <select id="select2-option" class="select-option-item-dynamic">
+                                          <option value="0"></option>
+                                          <option value="1">Стрийський автовокзал вул. Стрийська 14а</option>
+                                          <option value="2">Автостанція вулиця Горбачевського, 14</option>
+                                          <option value="3">Приміський автовокзал вулиця Білогірська, 1</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="discounts-name" class="col-lg-4 control-label">Прибуття о </label>
+                                      <div class="col-lg-8">
+                                        <input class="datepickerItem for-items-datepicker form-control"
+                                          data-timepicker="true" />
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="discounts-name" class="col-lg-4 control-label"> Відправлення о
+                                      </label>
+                                      <div class="col-lg-8">
+                                        <input class="datepickerItem for-items-datepicker form-control"
+                                          data-timepicker="true" />
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="discounts-name" class="col-lg-4 control-label label-distance">Відстань
+                                        до зупинки (від попередньої зупинки)</label>
+                                      <div class="col-lg-8">
+                                        <input name="distance-element" class="form-control" type="text" placeholder="км"
+                                          id="distance-element">
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-lg-12">
+                                        <a href="#" class="btn btn-s-md btn-danger delete" onClick="return false;"><i
+                                            class="fa fa-times"></i>
+                                          Видалити</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="dynamic-stuff">
+                                  <!-- Тут буде клонований динамічний елемент -->
+                                </div>
+                                <div class="form-group">
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                      <a href="#" class="btn btn-s-md btn-primary add-one" onClick="return false;"><i
+                                          class="fa fa-plus"></i>
+                                        Додати</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- dynamic -->
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <section class="panel panel-default">
+                            <header class="panel-heading font-bold">Блокування рейсу в обрані дні</header>
+                            <section class="wp-control-date">
+                              <div class="panel-body">
+                                <input type="text" class="form-control date-datepicker2"
+                                  placeholder=" Перелік дат у які рейс не буде відображатись для покупки квитків">
+                                <div class="alert alert-success">
+                                  <strong>Перелік дат у які рейс не буде відображатись для покупки квитків</strong>
+                                </div>
+                              </div>
+                            </section>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane" id="choice-of-bus">
+                      <section class="panel panel-default panel-departure">
+                        <div class="panel-body wp-main-departure">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label for="role-name" class="col-lg-5 control-label wp-choice-of-bus">Виберіть
+                                автобус</label>
+                              <div class="col-lg-7 wp-choice-of-bus">
+                                <select id="select2-option" class="select-option-item select-bus">
+                                  <option value="1">Scania</option>
+                                  <option value="2">Neoplan</option>
+                                  <option value="3">Mercedes-Benz</option>
+                                  <option value="4">Van Hool Astron</option>
+                                  <option value="5">Iveco</option>
+                                  <option value="6">MAN</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="alert alert-success">
+                                <strong>Виділіть місця, які не будуть доступні для покупки пасажирам</strong>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="plane">
+                            <div class="bus-driver exit exit--front fuselage"></div>
+                            <ol class="cabin fuselage">
+                              <li class="row row--1">
+                                <ol class="seats" type="A">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1A" />
+                                    <label for="1A">1</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" disabled id="2A" />
+                                    <label for="2A">2</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3A" />
+                                    <label for="3A">3</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4A" />
+                                    <label for="4A">4</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--2">
+                                <ol class="seats" type="B">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1B" />
+                                    <label for="1B">5</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2B" />
+                                    <label for="2B">6</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3B" />
+                                    <label for="3B">7</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4B" />
+                                    <label for="4B">8</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--3">
+                                <ol class="seats" type="C">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1C" />
+                                    <label for="1C">9</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2C" />
+                                    <label for="2C">10</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3C" />
+                                    <label for="3C">11</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4C" />
+                                    <label for="4C">12</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--4">
+                                <ol class="seats" type="D">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1D" />
+                                    <label for="1D">13</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2D" />
+                                    <label for="2D">14</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3D" />
+                                    <label for="3D">15</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4D" />
+                                    <label for="4D">16</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--5">
+                                <ol class="seats" type="E">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1E" />
+                                    <label for="1E">17</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2E" />
+                                    <label for="2E">18</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3E" />
+                                    <label for="3E">19</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4E" />
+                                    <label for="4E">20</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--6">
+                                <ol class="seats" type="F">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1F" />
+                                    <label for="1F">21</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2F" />
+                                    <label for="2F">22</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3F" />
+                                    <label for="3F">23</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4F" />
+                                    <label for="4F">24</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--7">
+                                <ol class="seats" type="G">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1G" />
+                                    <label for="1G">25</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2G" />
+                                    <label for="2G">26</label>
+                                  </li>
+
+                                  <span class="exit exit-center"></span>
+
+                                </ol>
+                              </li>
+                              <li class="row row--8">
+                                <ol class="seats" type="H">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1H" />
+                                    <label for="1H">27</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2H" />
+                                    <label for="2H">28</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3H" />
+                                    <label for="3H">29</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4H" />
+                                    <label for="4H">30</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--9">
+                                <ol class="seats" type="I">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1I" />
+                                    <label for="1I">31</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2I" />
+                                    <label for="2I">32</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3I" />
+                                    <label for="3I">33</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4I" />
+                                    <label for="4I">34</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--10">
+                                <ol class="seats" type="J">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1J" />
+                                    <label for="1J">35</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2J" />
+                                    <label for="2J">36</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3J" />
+                                    <label for="3J">37</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4J" />
+                                    <label for="4J">38</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--11">
+                                <ol class="seats" type="K">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1K" />
+                                    <label for="1K">39</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2K" />
+                                    <label for="2K">40</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3K" />
+                                    <label for="3K">41</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4K" />
+                                    <label for="4K">42</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--12">
+                                <ol class="seats" type="L">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1L" />
+                                    <label for="1L">43</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2L" />
+                                    <label for="2L">44</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3L" />
+                                    <label for="3L">45</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4L" />
+                                    <label for="4L">46</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--13">
+                                <ol class="seats" type="M">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1M" />
+                                    <label for="1M">47</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2M" />
+                                    <label for="2M">48</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3M" />
+                                    <label for="3M">49</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4M" />
+                                    <label for="4M">50</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--14">
+                                <ol class="seats" type="N">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1N" />
+                                    <label for="1N">51</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2N" />
+                                    <label for="2N">52</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3N" />
+                                    <label for="3N">53</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4N" />
+                                    <label for="4N">54</label>
+                                  </li>
+                                </ol>
+                              </li>
+                              <li class="row row--15">
+                                <ol class="seats last-row" type="P">
+                                  <li class="seat">
+                                    <input type="checkbox" id="1P" />
+                                    <label for="1P">55</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="2P" />
+                                    <label for="2P">56</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="3P" />
+                                    <label for="3P">57</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="4P" />
+                                    <label for="4P">58</label>
+                                  </li>
+                                  <li class="seat">
+                                    <input type="checkbox" id="5P" />
+                                    <label for="5P">59</label>
+                                  </li>
+                                </ol>
+                              </li>
+
+                            </ol>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <section class="panel panel-default">
+                                <div class="panel-body main-bus-body">
+                                  <div class="alert alert-success">
+                                    Бронювання місць на вказану дату. Виберіть дату бронювання та вкажіть перелік
+                                    місць бронювання в автобусі, і пасажирам на сайті не будуть відображатись місця
+                                    для покупки.
+                                  </div>
+                                  <div class="wp-success-title">
+                                    <div class="col-md-5">
+                                      <label for="role-name" class="control-label waiting-label"><strong>Вибір
+                                          дати</strong>
+                                      </label>
+                                    </div>
+                                    <div class="col-md-7">
+                                      <label for="role-name" class="control-label waiting-label"><strong>Перелік
+                                          заброньованих
+                                          місць</strong>
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <div class="panel-body wrapper-add-bus">
+                                    <!-- dynamic -->
+                                    <div class="form-group dynamic-element-bus" style="display:none">
+                                      <div class="row wp-add-dynamic-element-bus">
+
+                                        <div class="col-xs-10 col-sm-11 col-md-10">
+                                          <div class="row">
+                                            <div class="col-sm-6">
+                                              <input type="text" class="form-control date-datepicker3"
+                                                placeholder="Дата">
+                                            </div>
+                                            <div class="col-sm-6">
+                                              <input name="position-name" class="form-control"
+                                                placeholder="Перелік заброньованих місць" type="text">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-1 col-md-2">
+                                          <div class="row">
+                                            <div class="wp-delete-bus">
+                                              <a href="#" class="btn btn-s-md btn-danger delete-bus"
+                                                onClick="return false;"><i class="fa fa-times"></i>
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="dynamic-stuff-bus">
+                                      <!-- Тут буде клонований динамічний елемент -->
+                                    </div>
+                                    <div class="row">
+                                      <a href="#" class="btn btn-s-md btn-primary add-one-bus"
+                                        onClick="return false;"><i class="fa fa-plus"></i>
+                                        Додати</a>
+                                    </div>
+                                    <!-- dynamic -->
+                                  </div>
+                                </div>
+                              </section>
+                            </div>
+                            <div class="col-md-6">
+                            </div>
+                          </div>
+
+                        </div>
+                      </section>
+                    </div>
+
+                    <div class="tab-pane" id="cost-stock">
+                      <!-- .content -->
+                      <div class="wp-datatables">
+                        <div class="table-responsive">
+                          <table id="example" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                              <tr>
+                                <th> </th>
+                                <th>Калуш</th>
+                                <th>Івано-Франківськ</th>
+                                <th>Hrebenne</th>
+                                <th>Lublin</th>
+                                <th>Warsaw</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Долина</td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                              </tr>
+                              <tr>
+                                <td>Калуш</td>
+                                <td></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                              </tr>
+                              <tr>
+                                <td>Івано-Франківськ</td>
+                                <td></td>
+                                <td></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                              </tr>
+                              <tr>
+                                <td>Hrebenne</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                              </tr>
+                              <tr>
+                                <td>Lublin</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input name="text" class="form-control" type="text" placeholder="Ціна"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <!-- /.content -->
+
+                      <section class="scrollable padder multiselect-selected">
+                        <div class="m-b-md">
+                          <h4 class="m-t-none">Вибір знижки при покупці квитка<small>(знижка, яку можна буде вибрати при
+                              оплаті квитка)</small></h4>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <select name="from[]" id="multiselect" class="form-control" size="5" multiple="multiple">
+                              <option value="1">Персіонер 5% </option>
+                              <option value="2">Діти: від 0 до 5р 5%</option>
+                              <option value="3">Студент 10%</option>
+                            </select>
+                          </div>
+                          <div class="col-md-4">
+                            <button type="button" id="multiselect_rightAll"
+                              class="btn btn-block btn-s-md btn-success"><i class="fa fa-plus-circle"></i>
+                              Додати все</button>
+                            <button type="button" id="multiselect_leftAll" class="btn btn-block btn-s-md btn-warning"><i
+                                class="fa fa-minus-circle"></i> Видалити все</button>
+                          </div>
+                          <div class="col-md-4">
+                            <select name="to[]" id="multiselect_to" class="form-control" size="8"
+                              multiple="multiple"></select>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="scrollable padder multiselect-selected">
+                        <div class="m-b-md">
+                          <h4 class="m-t-none">Відображати на сайті <small>(знижка яка буде відображатися при пошуку
+                              рейсу)</small></h4>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <select name="from[]" id="multiselect2" class="form-control" size="5" multiple="multiple">
+                              <option value="1">Новорічна знижка 12%</option>
+                              <option value="2">Акція до посхи 2%</option>
+                              <option value="3">10%</option>
+                              <option value="4">15%</option>
+                              <option value="5">20%</option>
+                            </select>
+                          </div>
+                          <div class="col-md-4">
+                            <button type="button" id="multiselect2_rightAll"
+                              class="btn btn-block btn-s-md btn-success"><i class="fa fa-plus-circle"></i>
+                              Додати все</button>
+                            <button type="button" id="multiselect2_leftAll"
+                              class="btn btn-block btn-s-md btn-warning"><i class="fa fa-minus-circle"></i> Видалити
+                              все</button>
+                          </div>
+                          <div class="col-md-4">
+                            <select name="to[]" id="multiselect2_to" class="form-control" size="8"
+                              multiple="multiple"></select>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="scrollable padder booking-trips">
+                        <div class="m-b-md">
+                          <h4 class="m-t-none">Дозвіл на бронювання рейсу</h4>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="alert alert-success">
+                              <strong>
+                                Якщо поставлено чекбокс "Заборонити бронювання квитків", то при покупці квитка буде
+                                дозволено тільки оплата онлайн.
+                              </strong>
+                              <br><br>
+                              <strong>
+                                Якщо не вибрано жодного пункту, то буде дозволено оплата онлайн та бронювання квитка
+                              </strong>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-sm-12">
+                                <label>
+                                  <input type="checkbox" name="status_name" value="1" id="status">
+                                  Заборонити бронювання квитків
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+
+                    <div class="tab-pane wp-discount" id="discount">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <section class="panel panel-default">
+                            <div class="panel-body discount-body">
+                              <div class="alert alert-success">
+                                <strong>Відношення кількості поїздок до процентної ставки.</strong>
+                                <br><br>
+                                Для прикладу: Кількість поїздок
+                                <br>
+                                Від 0 До 19 - 0% (не буде знижки на квиток)
+                                <br>
+                                Від 20 До 20 - 100% (20-та поїздка безкоштовна)
+                                <br>
+                                Від 21 До 49 - 5% (від 21-ї поїздки до 49-ї, знижка на покупку квитка
+                                5%)
+                                <br>
+                                Від 50 До 99 - 10% (від 50-ї поїздки до 99-ї, знижка на покупку квитка 10%)
+                                <br>
+                                Від 100 До 99999 - 15% (від 100-ї поїздки до 99999-ї, знижка на покупку квитка 15%)
+                              </div>
+
+                              <div class="wp-discount-title">
+                                <div class="col-sm-5">
+                                  <label for="role-name" class="control-label label-count"><strong>Кількість
+                                      поїздок</strong>
+                                  </label>
+                                </div>
+                                <div class="col-sm-5">
+                                  <label for="role-name" class="control-label "><strong>Відсоток</strong>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="panel-body wrapper-add-discount">
+                                <!-- dynamic -->
+                                <div class="form-group dynamic-element-discount" style="display:none">
+                                  <div class="row wp-add-dynamic-element-discount">
+
+                                    <div class="col-xs-10 col-sm-10 col-md-10">
+                                      <div class="row">
+                                        <div class="col-sm-6 col-md-3">
+                                          <div class="form-group">
+                                            <input name="discount-option" class="form-control" type="text"
+                                              placeholder="Від" id="discount-option">
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                          <div class="form-group">
+                                            <input name="discount-option" class="form-control" type="text"
+                                              placeholder="До" id="discount-option">
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                          <div class="form-group">
+                                            </label>
+                                            <select id="rol" name="rol[]" class="form-control">
+                                              <option value="0"></option>
+                                              <option value="1">1%</option>
+                                              <option value="2">2%</option>
+                                              <option value="3">3%</option>
+                                              <option value="4">4%</option>
+                                              <option value="5">5%</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2">
+                                      <div class="wp-delete-discount">
+                                        <a href="#" class="btn btn-s-md btn-danger delete-discount"
+                                          onClick="return false;"><i class="fa fa-times"></i>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="dynamic-stuff-discount">
+                                  <!-- Тут буде клонований динамічний елемент -->
+                                </div>
+                                <div class="row">
+                                  <a href="#" class="btn btn-s-md btn-primary add-one-discount"
+                                    onClick="return false;"><i class="fa fa-plus"></i>
+                                    Додати</a>
+                                </div>
+                                <!-- dynamic -->
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+
+                        <div class="col-md-6">
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </section>
+
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+
+
+  <script type="text/javascript">
+    var log;
+    function logger(el) {
+      var $el = $(el);
+
+      return function (text) {
+        var count = $('p', $el).length;
+        $el.append('<p><span>' + count++ + '.</span> ' + text + '</p>').scrollTop(100000)
+      }
+    }
+  </script>
+
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/air-datepicker/datepicker.js"></script>
+  <script type="text/javascript" src="js/air-datepicker/datepickerItem.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <script>
+    $('.flight-datepicker').datepicker({
+      language: 'uk',
+      dateFormat: ' ',
+      timepicker: true,
+      classes: 'only-timepicker'
+    })
+
+  </script>
+
+  <script src="js/bootstrap-datepicker2.js"></script>
+
+  <script>
+    $('.date-datepicker2').datepicker2({
+      multidate: true,
+      format: 'dd-mm-yyyy'
+    });
+  </script>
+
+  <script src="js/bootstrap-datepicker3.js"></script>
+  <script>
+    $('.date-datepicker3').datepicker3({
+      multidate: true,
+      format: 'dd-mm-yyyy'
+    });
+  </script>
+
+
+
+  <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+  <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.tooltip.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.resize.js"></script>
+  <script src="js/charts/flot/jquery.flot.grow.js"></script>
+
+  <!-- select2 -->
+  <script src="js/select2/select2.min.js"></script>
+  <script src="js/charts/flot/demo.js"></script>
+  <script src="js/calendar/bootstrap_calendar.js"></script>
+  <script src="js/calendar/demo.js"></script>
+  <script src="js/sortable/jquery.sortable.js"></script>
+  <script src="js/app.plugin.js"></script>
+
+  <!-- combodate -->
+  <script src="js/libs/moment.min.js"></script>
+  <script src="js/combodate/combodate.js"></script>
+
+
+  <script>
+    // clean select-option-item
+    $('.select-option-item').select2().select2('val', $('.select2 option:eq(1)').val());
+  </script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
