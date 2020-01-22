@@ -57,10 +57,10 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<?php if (isset($_SESSION['passenger'])) { ?>
+				<?php if (isset($_SESSION['user']['id'])) { ?>
 					<li class="dropdown dash-link">
-						<a href="#" class="dropdown-toggle"><img src="http://via.placeholder.com/420x420" class="img-responsive avatar" alt="" />Привіт, 
-							<?=$_SESSION['passenger']['name2'];?></a>
+						<a href="#" class="dropdown-toggle"><img src="<?=$user['ava_photo'];?>" class="img-responsive avatar" alt="" />Привіт, 
+							<?=$user['name2'];?></a>
 						<ul class="dropdown-menu left-nav">
 							<li><a href="profile.php">Профіль</a></li>
 							<li><a href="logout.php">Вийти</a></li>

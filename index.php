@@ -46,6 +46,61 @@
 			<div class="container">
 				<div class="intro-item fl-wrap">
 
+					<span class="nice-select wide  wp-mini-center">
+						<span class="current">Телефони диспетчерів
+						</span>
+						<ul class="list">
+							<li><a class="dropdown-itens" href="tel:+3806364544577">
+									<img src="assets/img/Ukraine-Flag_16.png" class="img-flag-phones" alt="flag" />+38 (050)
+									538-92-951</a>
+							</li>
+							<li><a class="dropdown-itens" href="tel:+3806364544577">
+									<img src="assets/img/Ukraine-Flag_16.png" class="img-flag-phones" alt="flag" />+38 (063)
+									645-44-577</a>
+							</li>
+							<li><a class="dropdown-itens" href="tel:+3805053892951">
+									<img src="assets/img/Ukraine-Flag_16.png" class="img-flag-phones" alt="flag" />+38 (050)
+									538-92-951</a>
+							</li>
+							<li><a class="dropdown-itens" href="tel:+48888947700">
+									<img src="assets/img/Poland-Flag_16.png" class="img-flag-phones" alt="flag" />+48 (888)
+									947-700</a>
+							</li>
+							<li><a class="dropdown-itens" href="tel:+48889134661">
+									<img src="assets/img/Poland-Flag_16.png" class="img-flag-phones" alt="flag" />+48 (889)
+									134-661</a>
+							</li>
+						</ul>
+					</span>
+
+					<span class="wp-left-dropdown-menu">
+						<div class="dropdown">
+							<a class="dropdown-itens" href="tel:+3805053892951">
+								<img src="assets/img/Ukraine-Flag_16.png" class="img-flag-phones" alt="flag" />+38 (050)
+								538-92-951 <i class="fa fa-angle-down"></i> </a>
+							<div class="dropdown-content">
+								<a class="dropdown-itens" href="tel:+3806364544577"><img src="assets/img/Ukraine-Flag_16.png"
+										class="img-flag-phones" alt="flag" />+38 (063) 645-44-577</a>
+								<a class="dropdown-itens" href="tel:+3809708836135"><img src="assets/img/Ukraine-Flag_16.png"
+										class="img-flag-phones" alt="flag" />+38 (097) 088-36-135</a>
+								<a class="dropdown-itens" href="tel:+3805012343997"><img src="assets/img/Ukraine-Flag_16.png"
+										class="img-flag-phones" alt="flag" />+38 (050) 123-43-997</a>
+							</div>
+						</div>
+					</span>
+
+					<span class="wp-right-dropdown-menu">
+						<div class="dropdown">
+							<a class="dropdown-itens" href="tel:+48888947700">
+								<img src="assets/img/Poland-Flag_16.png" class="img-flag-phones" alt="flag" />+48 (888)
+								947-700<i class="fa fa-angle-down"></i> </a>
+							<div class="dropdown-content">
+								<a class="dropdown-itens" href="tel:+4(889134-661"><img src="assets/img/Poland-Flag_16.png"
+										class="img-flag-phones" alt="flag" />+48 (889) 134-661</a>
+							</div>
+						</div>
+					</span>
+
 					<div class="caption text-center cl-white">
 						<h2>Пошук автобусних рейсів</h2>
 						<p>Якісні перевезення кожного дня</p>
@@ -54,7 +109,7 @@
 					<form method="post" action="search.php">
 						<fieldset class="home-form-1">
 
-							<div class="col-md-4 col-sm-3 padd-0">
+							<div class="col-md-3 col-sm-3 padd-0">
 								<div class="sl-box">
 									<select class="wide form-control br-1" name="loc_from">
 										<option data-display="Звідки" value="0">Звідки</option>
@@ -65,7 +120,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-4 col-sm-3 padd-0">
+							<div class="col-md-3 col-sm-3 padd-0">
 								<div class="sl-box">
 									<select class="wide form-control br-1" name="loc_to">
 										<option data-display="Куди" value="0">Куди</option>
@@ -76,7 +131,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-2 col-sm-2 padd-0">
+							<div class="col-md-3 col-sm-3 padd-0">
 								<input type="text" name="date" id="book-date" class="form-control br-1" value="When...">
 							</div>
 
@@ -86,7 +141,7 @@
 								</div>
 							</div>-->
 
-							<div class="col-md-2 col-sm-2 padd-0">
+							<div class="col-md-3 col-sm-3 padd-0">
 								<button type="submit" class="btn theme-btn cl-white seub-btn">ЗНАЙТИ</button>
 							</div>
 
@@ -184,14 +239,14 @@
 							<article class="tour-box style-1">
 								<div class="tour-box-image">
 									<figure>
-										<a href="bus-park.php">
+										<a href="bus.php?id=<?=$bus['id']?>">
 											<img src="photo/buses/<?=$bus['photo'];?>" class="img-responsive listing-box-img" alt="" />
 											<div class="list-overlay"></div>
 											<div class="tour-time">
 												<i class="ti ti-car"></i><span><?=$bus['seats'];?> місць</span>
 											</div>
 											<h4 class="destination-place">
-												<a href="#"><?=$bus['brand'].' '.$bus['model'];?></a>
+												<a href="bus.php?id=<?=$bus['id']?>"><?=$bus['brand'].' '.$bus['model'];?></a>
 											</h4>
 										</a>
 									</figure>
@@ -199,7 +254,7 @@
 								<div class="description-bus">
 									<p><?=$bus['short_descr'];?></p>
 								</div>
-								<a href="bus-park.php" class="btn btn-success full-width bus-details-btn">Деталі</a>
+								<a href="bus.php?id=<?=$bus['id']?>" class="btn btn-success full-width bus-details-btn">Деталі</a>
 							</article>
 						</div>
 					<?php endforeach; ?>

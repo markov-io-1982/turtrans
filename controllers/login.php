@@ -17,12 +17,7 @@
         }    
 
         if (!empty($row)) {
-            $_SESSION['passenger'] = array(
-                'id' => $row['id'],
-                'name1' => $row['name1'],
-                'name2' => $row['name2'],
-                'photo' => $row['photo']
-            );
+            $_SESSION['user']['id'] = $row['id'];
             if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
                 $ip = $_SERVER['HTTP_CLIENT_IP'];
             } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -31,7 +26,7 @@
                 $ip = $_SERVER['REMOTE_ADDR'];
                 //$ip = '192.168.100.200';
             }
-            $sql = 'UPDATE `passengers` SET `ip` = "'.$ip.'",  `last_login` = "'.date("Y-m-d H:i:s").'" WHERE id = '.$_SESSION['passenger']['id'];
+            $sql = 'UPDATE `passengers` SET `ip` = "'.$ip.'",  `last_login` = "'.date("Y-m-d H:i:s").'" WHERE id = '.$row['id'];
             $query = $db->query($sql);
             header('Location: index.php');
         } else {

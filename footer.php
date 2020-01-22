@@ -1,5 +1,5 @@
-<!-- ================= footer start ========================= -->
-<footer class="footer dark-bg">
+<!-- ================= Footer start ========================= -->
+<footer class="footer dark-bg wrapper-footer">
 	<div class="container">
 
 		<!-- Row Start -->
@@ -7,69 +7,62 @@
 
 			<div class="col-md-8 col-sm-8">
 				<div class="row">
-					<div class="col-md-4 col-sm-4">
-						<h4>Featured Destinations</h4>
-						<ul>
-							<li><a href="destination-grid.html">Destination Grid</a></li>
-							<li><a href="destination-list.html">Destination List</a></li>
-							<li><a href="destination-grid-sidebar.html">Destination Grid Sidebar</a></li>
-							<li><a href="destination-list-sidebar.html">Destination List Sidebar</a></li>
-							<li><a href="destination-detail.html">Destination Detail</a></li>
-							<li><a href="restaurant-grid.html">Restaurant Grid</a></li>
+					<div class="col-md-6 col-sm-6">
+						<span class="block-header">Телефони диспетчерів</span>
+						<ul class="wp-footer-info-tel">
+							<li><a href="tel:+3806364544577"><i class="fa fa-fw fa-phone">
+									</i>+38 (050) 538-92-951</a></li>
+							<li><a href="tel:+3805053892951"><i class="fa fa-fw fa-phone">
+									</i>+38 (063) 645-44-577</a></li>
+							<li><a href="tel:+48888947700"><i class="fa fa-fw fa-phone">
+									</i>+48 (888) 947-700</a></li>
+							<li><a href="tel:+48889134661"><i class="fa fa-fw fa-phone">
+									</i>+48 (889) 134-661</a></li>
 						</ul>
 					</div>
-					<div class="col-md-4 col-sm-4">
-						<h4>Featured Tours</h4>
+					<div class="col-md-6 col-sm-6">
+						<span class="block-header">Контактна інформація</span>
 						<ul>
-							<li><a href="tour-grid.html">Tour Grid</a></li>
-							<li><a href="tour-list.html">Tour List</a></li>
-							<li><a href="tour-grid-sidebar.html">Tour Grid Sidebar</a></li>
-							<li><a href="tour-list-sidebar.html">tour List Sidebar</a></li>
-							<li><a href="tour-detail.html">Tour Detail</a></li>
-							<li><a href="restaurant-list-html">Restaurant Grid</a></li>
-						</ul>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<h4>Featured Hotels</h4>
-						<ul>
-							<li><a href="hotel-grid.html">Hotel Grid</a></li>
-							<li><a href="hotel-list.html">Hotel List</a></li>
-							<li><a href="hotel-grid-sidebar.html">Hotel Grid Sidebar</a></li>
-							<li><a href="hotel-list-sidebar.html">Hotel List Sidebar</a></li>
-							<li><a href="hotel-detail.html">Hotel Detail</a></li>
-							<li><a href="restaurant-detail.html">Restaurant Detail</a></li>
+							<div class="form-box footer-contact-information">
+								<i class="c-icon ti-map-alt theme-cl"></i>
+								<div class="c-detail">
+									<span>Україна, Івано-Франківська обл. м. Калуш вул. Долинська, 52</span>
+								</div>
+							</div>
+							<div class="form-box footer-contact-information">
+								<i class="c-icon ti-headphone-alt theme-cl"></i>
+								<div class="c-detail">
+									<span>kalush.turtrans@gmail.com</span>
+								</div>
+							</div>
+							<div class="form-box footer-contact-information">
+								<i class="c-icon ti-time theme-cl"></i>
+								<div class="c-detail">
+									<span>Графік роботи офісу: ПН. - НД. 8:00 - 23: 00</span>
+								</div>
+							</div>
 						</ul>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-md-4 col-sm-4">
-				<h4>Subscribe Now</h4>
-				<!-- Newsletter -->
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Enter Email">
-					<span class="input-group-btn">
-						<button type="button" class="btn btn-default"><i
-								class="fa fa-location-arrow font-20"></i></button>
-					</span>
-				</div>
+				<span class="block-header">Соціальні мережі</span>
 
 				<!-- Social Box -->
 				<div class="f-social-box">
 					<ul>
 						<li><a href="#"><i class="fa fa-facebook facebook-cl"></i></a></li>
 						<li><a href="#"><i class="fa fa-google google-plus-cl"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter twitter-cl"></i></a></li>
-						<li><a href="#"><i class="fa fa-pinterest pinterest-cl"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram instagram-cl"></i></a></li>
 					</ul>
 				</div>
 
 				<!-- App Links -->
-				<div class="f-app-box">
+				<div class="f-app-box wp-payment-systems">
+					<p>Безпечні платежі з:</p>						
 					<ul>
-						<li><a href="#"><i class="fa fa-apple"></i>App Store</a></li>
-						<li><a href="#"><i class="fa fa-android"></i>Play Store</a></li>
+						<img src="https://mlp-bus.com/img/visa.png" alt="logo">
+						<img src="https://mlp-bus.com/img/mastercard.png" alt="logo">
 					</ul>
 				</div>
 

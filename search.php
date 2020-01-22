@@ -1,6 +1,11 @@
 <?php
     require 'connect.php';
     require 'controllers/search.php';
+
+    //echo "<pre>";
+    //print_r($trips);
+    //echo "</pre>";
+    //exit();
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +34,48 @@
 
 	<?php require 'header.php'; ?>
 
+	<!-- ======================= Start Page Title ===================== -->
+	<div class="page-title image-title mini-banner-others-page"
+		style="background-image:url(assets/img/mini-background-image.jpg);">
+		<div class="container">
+			<div class="wp-search-multi-option-booking">
+				<form method="post" action="search.php">
+					<fieldset class="home-form-1">
+						<div class="col-md-3 col-sm-3 padd-0">
+							<div class="sl-box">
+								<select class="wide form-control br-1" name="loc_from">
+									<option data-display="Звідки" value="0">Звідки</option>
+									<?php foreach ($locations as $location): ?>
+										<option <?=($loc_from==$location['id'])?'selected':''?> value="<?=$location['id']?>"><?=$location['city']?></option>
+									<?php endforeach; ?>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3 padd-0">
+							<div class="sl-box">
+								<select class="wide form-control br-1" name="loc_to">
+									<option data-display="Куди" value="0">Куди</option>
+									<?php foreach ($locations as $location): ?>
+										<option <?=($loc_to==$location['id'])?'selected':''?> value="<?=$location['id']?>"><?=$location['city']?></option>
+									<?php endforeach; ?>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3 padd-0">
+							<input type="text" name="date" id="book-date" class="form-control br-1" value="<?=$date;?>">
+						</div>
+
+						<div class="col-md-3 col-sm-3 padd-0">
+							<button type="submit" class="btn theme-btn cl-white seub-btn">ЗНАЙТИ</button>
+						</div>
+
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- ======================= End Page Title ===================== -->
+
 	<!-- ======================= Start search ===================== -->
 	<section class="gray-bg wp-search-gray-bg">
 		<div class="container">
@@ -37,7 +84,11 @@
 				<div class="row">
 					<div class="col-md-12">
 
-						<?php foreach ($trips as $trip): ?>
+						<?php 
+							foreach ($trips as $trip): 
+								$first_index = 0;
+								$last_index = count($trip['route']) - 1;
+							?>
 							<div class="pay-integration wp-block-search">
 								<div class="row">
 									<div class="col-sm-5">
@@ -55,24 +106,24 @@
 												<!-- ======================= End Timeline ===================== -->
 											</div>
 											<div class="icon-box-text first-block">
-												<span class="departure-time"><?=date('H:i', strtotime($trip['start_time']));?></span>
+												<span class="departure-time"><?=date('H:i', strtotime($trip['route'][$first_index]['time']));?></span>
 												<span class="departure-date"><?=$_POST['date'];?></span>
-												<span class="flight-info city"><?=$trip['loc_from_name'];?></span>
-												<span class="flight-info address"><?=$trip['stop_from_name'];?></p>
+												<span class="flight-info city"><?=$trip['route'][$first_index]['loc_name'];?></span>
+												<span class="flight-info address"><?=$trip['route'][$first_index]['stop_name'];?></p>
 											</div>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="center-block">
-											<span class="departure-time"><?=date('H:i', strtotime($trip['end_time']));?></span>
-											<span class="flight-info city"><?=$trip['loc_to_name'];?></span>
-											<span class="flight-info address"><?=$trip['stop_to_name'];?></p>
+											<span class="departure-time"><?=date('H:i', strtotime($trip['route'][$last_index]['time']));?></span>
+											<span class="flight-info city"><?=$trip['route'][$last_index]['loc_name'];?></span>
+											<span class="flight-info address"><?=$trip['route'][$last_index]['stop_name'];?></p>
 										</div>
 									</div>
 									<div class="col-sm-3">
 										<div class="right-block">
-											<div class="text-through"><?=$trip['trip_price'];?> грн.</div>
-											<div class="ticket-price"><?=$trip['trip_price'];?> грн.</div>
+											<div class="text-through"><?=$trip['price'];?> грн.</div>
+											<div class="ticket-price"><?=$trip['price'];?> грн.</div>
 											<div class="wp-details-buy">
 												<button type="button" class="collapse-button" data-toggle="collapse"
 													data-target="#demo<?=$trip['id'];?>">
@@ -96,35 +147,35 @@
 													
 													<li class="timeline-item">
 														<div class="timeline-info">
-															<span><?=date('H:i', strtotime($trip['start_time']));?></span>
+															<span><?=date('H:i', strtotime($trip['route'][$first_index]['time']));?></span>
 														</div>
 														<div class="timeline-marker"></div>
 														<div class="timeline-content">
-															<h5 class="timeline-title"><?=$trip['loc_from_name'];?></h5>
-															<p><?=$trip['stop_from_name'];?></p>
+															<h5 class="timeline-title"><?=$trip['route'][$first_index]['loc_name'];?></h5>
+															<p><?=$trip['route'][$first_index]['stop_name'];?></p>
 														</div>
 													</li>
 
-													<?php foreach($trip['stops'] as $stop): ?>	
+													<?php for ($i = $first_index + 1; $i < $last_index; $i++) { ?>	
 														<li class="timeline-item ">
 															<div class="timeline-info">
-																<span><?=date('H:i', strtotime($stop['start_time']));?></span>
+																<span><?=date('H:i', strtotime($trip['route'][$i]['time']));?></span>
 															</div>
 															<div class="timeline-marker intermediate-points"></div>
 															<div class="timeline-content">
-																<h5 class="timeline-title"><?=$stop['loc_name'];?></h5>
-																<p><?=$stop['stop_name'];?></p>
+																<h5 class="timeline-title"><?=$trip['route'][$i]['loc_name'];?></h5>
+																<p><?=$trip['route'][$i]['stop_name'];?></p>
 															</div>
 														</li>
-													<?php endforeach; ?>
+													<?php } ?>
 													<li class="timeline-item">
 														<div class="timeline-info">
-															<span><?=date('H:i', strtotime($trip['end_time']));?></span>
+															<span><?=date('H:i', strtotime($trip['route'][$last_index]['time']));?></span>
 														</div>
 														<div class="timeline-marker last-stop"></div>
 														<div class="timeline-content">
-															<h5 class="timeline-title"><?=$trip['loc_to_name'];?></h5>
-															<p><?=$trip['stop_to_name'];?></p>
+															<h5 class="timeline-title"><?=$trip['route'][$last_index]['loc_name'];?></h5>
+															<p><?=$trip['route'][$last_index]['stop_name'];?></p>
 														</div>
 													</li>
 
@@ -133,10 +184,10 @@
 												<div class="wp-detail">
 													<span class="wp-travel">
 														<span class="travel-time">Час в дорозі:</span><span
-															class="time">13:50</span>
+															class="time"><?=$trip['time'];?></span>
 													</span>
 													<span class="wp-bus-info">
-														<span class="bus-info">Автобус:</span><span class="bus"><?=$trip['bus_brand'].' '.$trip['bus_model'];?></span>
+														<span class="bus-info">Автобус:</span><span class="bus"><?=$trip['bus_name'];?></span>
 													</span>
 												</div>
 											</div>
@@ -197,7 +248,7 @@
 			"timePicker": true,
 			"startDate": moment(date),
 			locale: {
-				format: 'DD.MM.YYYY'
+				format: 'DD-MM-YYYY'
 			}
 		}, function (start, end, label) {
 			console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');

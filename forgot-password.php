@@ -1,9 +1,6 @@
 <?php
     require 'connect.php';
     require 'controllers/forgot-password.php';
-    if (!empty($_POST)) {
-    	exit();
-    }	
 ?>
 
 <!DOCTYPE html>
