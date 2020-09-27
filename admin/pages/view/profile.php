@@ -2,7 +2,7 @@
     $sql = 'SELECT users.*, (SELECT positions.name FROM positions WHERE users.position_id = positions.id) as position_name 
             FROM users 
             LEFT JOIN positions ON users.position_id = positions.id
-            WHERE users.id = '.$_SESSION['user']['id'];
+            WHERE users.id = '.$_SESSION['admin']['id'];
     $query = $db->query($sql);
     $row = $query->fetch(PDO::FETCH_ASSOC);
     if (empty($row['photo']))

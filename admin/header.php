@@ -23,20 +23,20 @@
         <li class="hidden-xs">
           <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
             <i class="fa fa-bell"></i>
-            <span class="badge badge-sm up bg-danger m-l-n-sm count">1</span>
+            <span class="badge badge-sm up bg-danger m-l-n-sm count">0</span>
           </a>
           <section class="dropdown-menu aside-xl">
             <section class="panel bg-white">
               <header class="panel-heading b-light bg-light">
-                <strong>У вас є <span class="count">1</span> сповіщення</strong>
+                <strong>У вас є <span class="count">0</span> сповіщення</strong>
               </header>
               <div class="list-group list-group-alt animated fadeInRight">
+<!--
                 <a href="#" class="media list-group-item">
-                  <span class="pull-left thumb-sm text-center">
-                    <i class="fa fa-ticket fa-2x text-success"></i></span>
-                  <span class="media-body block m-b-none"> Долина - Варшава
-                    <br><small class="text-muted"> 15 хвилин тому</small></span>
+                  <span class="pull-left thumb-sm text-center"><i class="fa fa-ticket fa-2x text-success"></i></span>
+                  <span class="media-body block m-b-none"> Долина - Варшава<br><small class="text-muted"> 15 хвилин тому</small></span>
                 </a>
+-->
               </div>
             </section>
           </section>
@@ -46,11 +46,11 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
               <?php
-                !empty($_SESSION['user']['photo']) ? $photo = '../photo/users/'.$_SESSION['user']['photo'] : $photo = 'http://bus-ticket.bdtask.com/bus_demo_v5/assets/img/icons/default.jpg';
+                !empty($_SESSION['admin']['photo']) ? $photo = '../photo/users/'.$_SESSION['admin']['photo'] : $photo = 'http://bus-ticket.bdtask.com/bus_demo_v5/assets/img/icons/default.jpg';
               ?>  
               <img src="<?=$photo;?>">
             </span>
-            <?php echo $_SESSION['user']['login'];?> <b class="caret"></b>
+            <?php echo $_SESSION['admin']['login'];?> <b class="caret"></b>
           </a>
           <ul class="dropdown-menu animated fadeInRight">
             <span class="arrow top"></span>

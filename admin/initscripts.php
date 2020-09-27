@@ -27,6 +27,9 @@ switch ($page) {
     case 'stops': ?>
         <script src="scripts/stops.js"></script>
         <?php break;
+    case 'news': ?>
+        <script src="scripts/news.js"></script>
+        <?php break;
     case 'settings': ?>
         <script src="scripts/settings.js"></script>
         <?php break;

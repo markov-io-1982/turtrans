@@ -8,7 +8,7 @@
         $stmt->execute();
         $row = $stmt->fetch();
         if (isset($row)) {
-            $_SESSION['user'] = array(
+            $_SESSION['admin'] = array(
                 'id' => $row['id'],
                 'login' => $row['login'],
                 'name' => $row['name'],
@@ -25,7 +25,7 @@
                 $ip = $_SERVER['REMOTE_ADDR'];
                 //$ip = '192.168.100.200';
             }
-            $sql = 'UPDATE `users` SET `ip` = "'.$ip.'",  `last_login` = "'.date("Y-m-d H:i:s").'" WHERE id = '.$_SESSION['user']['id'];
+            $sql = 'UPDATE `users` SET `ip` = "'.$ip.'",  `last_login` = "'.date("Y-m-d H:i:s").'" WHERE id = '.$_SESSION['admin']['id'];
             $query = $db->query($sql);
             header('Location: index.php');
         } else {

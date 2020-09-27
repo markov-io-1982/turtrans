@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Янв 18 2020 г., 13:11
+-- Время создания: Сен 19 2020 г., 21:28
 -- Версия сервера: 5.7.25
--- Версия PHP: 7.0.32
+-- Версия PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -100,13 +100,16 @@ INSERT INTO `buses_options` (`id`, `bus_id`, `option_id`) VALUES
 (17, 4, 3),
 (64, 2, 2),
 (25, 0, 5),
-(60, 3, 1),
+(68, 3, 1),
 (29, 8, 3),
 (34, 9, 3),
 (35, 10, 4),
 (36, 10, 5),
 (39, 11, 2),
-(67, 12, 1);
+(67, 12, 1),
+(69, 3, 2),
+(70, 3, 4),
+(71, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -184,6 +187,56 @@ INSERT INTO `locations` (`id`, `city`, `region`, `country`, `status`, `carrier_i
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `description` text,
+  `photo` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created` datetime DEFAULT NULL,
+  `carrier_id` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `news`
+--
+
+INSERT INTO `news` (`id`, `name`, `description`, `photo`, `status`, `created`, `carrier_id`) VALUES
+(1, 'Тестовая новость', 'Описание тестовой новости', 'news_1579082286.jpg', 1, '2020-09-15 08:21:00', 2),
+(4, 'ok;lkl;;kl;k', 'lk;lkll;k  gfkjgrelk rjkghrjkl jkrghklr goiuh oiugr', 'news4_1600172994.jpg', 1, '2020-09-15 15:25:16', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `body` text,
+  `created` datetime DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `notifications`
+--
+
+INSERT INTO `notifications` (`id`, `user_id`, `body`, `created`, `status`) VALUES
+(5, 1, 'Купівля квитка: Львів-Прага', '2020-09-18 22:34:14', 0),
+(6, 1, 'Купівля квитка: Львів-Прага', '2020-09-18 22:34:14', 0),
+(7, 1, 'Купівля квитка: Львів-Прага', '2020-09-19 21:21:53', 0),
+(8, 1, 'Купівля квитка: Львів-Прага', '2020-09-19 21:21:54', 0),
+(9, 1, 'Купівля квитка: Львів-Прага', '2020-09-19 21:25:38', 0),
+(10, 1, 'Купівля квитка: Львів-Прага', '2020-09-19 21:25:38', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `options`
 --
 
@@ -241,7 +294,8 @@ INSERT INTO `passengers` (`id`, `name1`, `name2`, `name3`, `email`, `phone`, `tr
 (3, 'Шлюхова', 'Анжела', 'Петрівна', 'pass3@gmail.com', '+380951111111', 20, 'Вінниця', 'Україна', '', '123', 'Непристойно себе поводила та залицялася до інших пасажирів', 1, NULL, '192.168.1.1', '2019-11-21 10:00:00', '2019-11-21 11:00:00', 2),
 (1, 'Кресяк', 'Василь', 'Васильович', 'vasylovych.gmail.com', '+380661111111', 50, 'Трускавець', 'Україна', 'passenger1_1577375024.jpg', '123', 'Розбив вікно', 1, 'Ігор Марков', '192.168.100.200', '2019-11-23 14:34:33', '2019-11-23 14:31:21', 2),
 (2, 'Бухарев', 'Антон', 'Васильович', 'pass2@gmail.com', '+380662222222', 30, 'Львів', 'Україна', '', '123', 'Зайшов в автобус набуханний та обригав свого сусіда зліва', 1, NULL, '192.168.5.8', '2019-11-20 14:00:00', '2019-11-20 21:00:00', 2),
-(16, 'Марков', 'Ігор', 'Олегович', 'markov.io.1982@gmail.com', '+380951234567', 15, 'Кропивницький', 'Україна', 'passenger16_1579192947.jpg', '123', 'Взагалі нічого цікавого', 1, NULL, '127.0.0.1', '2020-01-16 19:42:05', '2020-01-16 19:41:49', 1);
+(17, 'huiyiihuhuh', 'huhuhu', NULL, 'uhhuhuh', 'huuhuhuh', 0, NULL, NULL, NULL, 'uhuhuhu', NULL, 1, NULL, '127.0.0.1', '2020-01-24 16:26:10', NULL, 1),
+(16, 'Марков', 'Ігор', 'Олегович', 'markov.io.1982@gmail.com', '+380951234567', 15, 'Кропивницький', 'Україна', 'passenger16_1579192947.jpg', '123', 'Взагалі нічого цікавого', 1, NULL, '127.0.0.1', '2020-09-19 19:58:55', '2020-01-24 16:26:24', 1);
 
 -- --------------------------------------------------------
 
@@ -295,6 +349,7 @@ CREATE TABLE `roles` (
   `site_info` tinyint(1) NOT NULL DEFAULT '0',
   `passengers` tinyint(1) NOT NULL DEFAULT '0',
   `admins` tinyint(1) NOT NULL DEFAULT '0',
+  `news` tinyint(1) NOT NULL DEFAULT '1',
   `carrier_id` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -302,12 +357,12 @@ CREATE TABLE `roles` (
 -- Дамп данных таблицы `roles`
 --
 
-INSERT INTO `roles` (`id`, `name`, `position_id`, `edit`, `del`, `locations`, `buses`, `options`, `personnel`, `positions`, `roles`, `discounts`, `stops`, `trips`, `tickets`, `site_info`, `passengers`, `admins`, `carrier_id`) VALUES
-(1, 'Доступи супер-адміна', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0),
-(2, 'Доступи перевізника №1', 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0),
-(3, 'Доступи водія №1', 6, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 2),
-(9, 'Доступи перевізника №2', 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0),
-(4, 'Доступи директора №1', 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2);
+INSERT INTO `roles` (`id`, `name`, `position_id`, `edit`, `del`, `locations`, `buses`, `options`, `personnel`, `positions`, `roles`, `discounts`, `stops`, `trips`, `tickets`, `site_info`, `passengers`, `admins`, `news`, `carrier_id`) VALUES
+(1, 'Доступи супер-адміна', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0),
+(2, 'Доступи перевізника №1', 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0),
+(3, 'Доступи водія №1', 6, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 2),
+(9, 'Доступи перевізника №2', 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0),
+(4, 'Доступи директора №1', 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -350,6 +405,10 @@ INSERT INTO `stops` (`id`, `city_id`, `name`, `address`, `status`, `carrier_id`)
 CREATE TABLE `tickets` (
   `id` int(11) NOT NULL,
   `passenger_id` int(11) NOT NULL DEFAULT '0',
+  `name1` varchar(250) DEFAULT NULL,
+  `name2` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `phone` varchar(250) DEFAULT NULL,
   `trip_id` int(11) NOT NULL DEFAULT '0',
   `loc_from_id` int(11) NOT NULL DEFAULT '0',
   `loc_to_id` int(11) NOT NULL DEFAULT '0',
@@ -361,6 +420,7 @@ CREATE TABLE `tickets` (
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `date_reserv_start` datetime DEFAULT NULL,
   `date_reserv_end` datetime DEFAULT NULL,
+  `discount_id` int(11) NOT NULL DEFAULT '0',
   `carrier_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -368,9 +428,13 @@ CREATE TABLE `tickets` (
 -- Дамп данных таблицы `tickets`
 --
 
-INSERT INTO `tickets` (`id`, `passenger_id`, `trip_id`, `loc_from_id`, `loc_to_id`, `number`, `date_buy`, `date_departure`, `seat`, `cost`, `status`, `date_reserv_start`, `date_reserv_end`, `carrier_id`) VALUES
-(1, 16, 10, 1, 4, 'YT000825bsa', NULL, '2019-01-15 12:35:00', 15, '800', 1, '2019-01-14 10:36:57', '2019-01-14 22:36:57', 2),
-(2, 16, 20, 6, 10, 'YT000833wer', '2019-01-14 09:36:57', '2019-01-17 18:10:00', 44, '1200', 2, NULL, NULL, 2);
+INSERT INTO `tickets` (`id`, `passenger_id`, `name1`, `name2`, `email`, `phone`, `trip_id`, `loc_from_id`, `loc_to_id`, `number`, `date_buy`, `date_departure`, `seat`, `cost`, `status`, `date_reserv_start`, `date_reserv_end`, `discount_id`, `carrier_id`) VALUES
+(1, 16, 'Ігор', 'Марков', 'markov.io.1982@gmail.com', '+380951234567', 10, 1, 4, 'YT000825bsa', NULL, '2019-01-15 12:35:00', 15, '800', 1, '2019-01-14 10:36:57', '2019-01-14 22:36:57', 0, 2),
+(2, 16, 'Петро', 'Порошенко', 'petro@gmail.com', '+380951234569', 20, 6, 10, 'YT000833wer', '2019-01-14 09:36:57', '2019-01-17 18:10:00', 44, '1200', 2, NULL, NULL, 0, 2),
+(22, 16, 'Ігор', 'Марков', 'markov.io.1982@gmail.com', '+380951234567', 13, 8, 5, '2WDYZLNXMB', '2020-09-19 21:21:35', '2020-09-19 00:00:00', 4, '360', 2, NULL, NULL, 0, 0),
+(19, 16, 'Ігор', 'Марков', 'markov.io.1982@gmail.com', '+380951234567', 13, 8, 5, '830JSCIZXV', '2020-09-16 16:50:48', '2020-02-28 00:00:00', 3, '380', 2, NULL, NULL, 0, 0),
+(21, 16, 'Ігор', 'Марков', 'markov.io.1982@gmail.com', '+380951234567', 13, 8, 5, 'LFP8N7AHIK', '2020-09-19 21:21:35', '2020-09-19 00:00:00', 3, '380', 2, NULL, NULL, 0, 0),
+(20, 16, 'Ігор', 'Марков', 'markov.io.1982@gmail.com', '+380951234567', 13, 8, 5, 'V5T96GKXNM', '2020-09-16 16:50:48', '2020-02-28 00:00:00', 4, '360', 2, NULL, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -398,8 +462,8 @@ CREATE TABLE `trips` (
 --
 
 INSERT INTO `trips` (`id`, `loc_from_id`, `stop_from_id`, `start_time`, `loc_to_id`, `stop_to_id`, `end_time`, `bus_id`, `blocked_dates`, `blocked_seats`, `reserv_disabled`, `carrier_id`) VALUES
-(8, 8, 7, '10:00:00', 2, 6, '17:00:00', 12, '18-01-2020,17-01-2020', '', 0, 2),
-(13, 1, 1, '08:00:00', 2, 5, '18:00:00', 2, '17-01-2020,18-01-2020', '10,15,20,25,30,35,40,45,50,55', 0, 2);
+(8, 8, 7, '10:00:00', 2, 6, '17:00:00', 12, '24-01-2020,25-01-2020', '', 0, 2),
+(13, 1, 1, '08:00:00', 2, 5, '18:00:00', 2, '24-01-2020,25-01-2020', '10,15,20,25,30,35,40,45,50,55', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -420,15 +484,15 @@ CREATE TABLE `trips_discounts` (
 --
 
 INSERT INTO `trips_discounts` (`id`, `trip_id`, `discount_id`, `trips_from`, `trips_to`) VALUES
-(78, 13, 9, '100', '1000'),
-(77, 13, 8, '50', '99'),
-(76, 13, 7, '20', '49'),
-(75, 13, 6, NULL, NULL),
-(74, 13, 2, NULL, NULL),
-(73, 13, 1, NULL, NULL),
-(72, 13, 3, NULL, NULL),
-(79, 8, 1, NULL, NULL),
-(80, 8, 5, NULL, NULL);
+(89, 13, 9, '100', '1000'),
+(88, 13, 8, '50', '99'),
+(87, 13, 7, '20', '49'),
+(86, 13, 6, NULL, NULL),
+(85, 13, 2, NULL, NULL),
+(84, 13, 1, NULL, NULL),
+(83, 13, 3, NULL, NULL),
+(82, 8, 5, NULL, NULL),
+(81, 8, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -449,25 +513,25 @@ CREATE TABLE `trips_prices` (
 --
 
 INSERT INTO `trips_prices` (`id`, `trip_id`, `loc_from_id`, `loc_to_id`, `price`) VALUES
-(239, 13, 5, 2, '800'),
-(238, 13, 16, 2, '500'),
-(237, 13, 16, 5, '400'),
-(236, 13, 8, 2, '300'),
-(235, 13, 8, 5, '200'),
-(234, 13, 8, 16, '100'),
-(233, 13, 1, 2, '1200'),
-(232, 13, 1, 5, '300'),
-(231, 13, 1, 16, '200'),
+(263, 13, 5, 2, '800'),
+(262, 13, 16, 2, '500'),
+(261, 13, 16, 5, '400'),
+(260, 13, 8, 2, '300'),
+(259, 13, 8, 5, '400'),
+(258, 13, 8, 16, '100'),
+(257, 13, 1, 2, '1200'),
+(256, 13, 1, 5, '300'),
+(255, 13, 1, 16, '200'),
 (53, 14, 1, 8, '100'),
 (54, 14, 1, 16, '200'),
 (55, 14, 1, 2, '800'),
 (56, 14, 8, 16, ''),
 (57, 14, 8, 2, ''),
 (58, 14, 16, 2, ''),
-(230, 13, 1, 8, '100'),
-(249, 8, 8, 2, '800'),
-(248, 8, 8, 5, '200'),
-(250, 8, 5, 2, '500');
+(254, 13, 1, 8, '100'),
+(253, 8, 5, 2, '500'),
+(252, 8, 8, 2, '800'),
+(251, 8, 8, 5, '200');
 
 -- --------------------------------------------------------
 
@@ -487,8 +551,8 @@ CREATE TABLE `trips_seats_reserv` (
 --
 
 INSERT INTO `trips_seats_reserv` (`id`, `trip_id`, `date`, `seats`) VALUES
-(72, 13, '2019-12-31', '22,23'),
-(71, 13, '2019-12-14', '1,2,3,4');
+(74, 13, '2020-02-28', '22,23'),
+(73, 13, '2020-02-27', '1,2,3,4');
 
 -- --------------------------------------------------------
 
@@ -512,11 +576,11 @@ CREATE TABLE `trips_stops` (
 
 INSERT INTO `trips_stops` (`id`, `trip_id`, `loc_id`, `stop_id`, `start_time`, `end_time`, `distance`) VALUES
 (118, 14, 16, 1, '06:27:00', '03:27:00', ''),
-(173, 13, 5, 11, '15:30:00', '16:30:00', '20'),
-(172, 13, 16, 9, '13:00:00', '14:00:00', '15'),
+(181, 13, 5, 11, '15:30:00', '16:30:00', '20'),
+(180, 13, 16, 9, '13:00:00', '14:00:00', '15'),
 (117, 14, 8, 1, '05:27:00', '08:27:00', ''),
-(171, 13, 8, 7, '10:00:00', '11:00:00', '10'),
-(177, 8, 5, 12, '14:00:00', '15:00:00', '');
+(179, 13, 8, 7, '10:00:00', '11:00:00', '10'),
+(178, 8, 5, 12, '14:00:00', '15:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -549,7 +613,7 @@ INSERT INTO `users` (`id`, `name`, `position_id`, `phone`, `login`, `email`, `pa
 (3, 'Гіві Камікадзе', 6, '+380951111111', 'driver1', 'driver1@gmail.com', '123', '', 1, '::1', '2019-12-01 10:14:35', '2019-12-01 10:14:42', 2, 3),
 (4, 'Артем Рукожопов', 7, '+380952222222', 'mechanic1', 'mechanic1@gmail.com', '123', '', 1, '192.168.1.2', '2019-11-21 15:00:00', '2019-11-21 20:00:00', 2, 3),
 (5, 'Генадій Дятлов', 3, '+380953333333', 'director1', 'director1@gmail.com', '123', 'user5_1577375330.jpg', 1, '192.168.1.3', '2019-11-22 12:00:00', '2019-11-23 16:00:00', 2, 4),
-(1, 'Ігор Марков', 1, '+380661111111', 'admin', 'admin@gmail.com', 'admin', 'user1_1577375377.jpg', 1, '127.0.0.1', '2020-01-16 19:29:18', '2019-12-26 18:51:52', 0, 1),
+(1, 'Ігор Марков', 1, '+380661111111', 'admin', 'markov.io.1982@gmail.com', 'admin', 'user1_1577375377.jpg', 1, '127.0.0.1', '2020-09-18 15:41:02', '2019-12-26 18:51:52', 0, 1),
 (2, 'Олег Ковальчук', 2, '+380662222222', 'carrier1', 'carrier1@gmail.com', '123', 'user2_1577375216.jpg', 1, '::1', '2019-12-01 10:43:30', '2019-12-01 10:46:34', 0, 2),
 (13, 'Сашко Дебіленко', 2, '+380664444444', 'carrier2', 'carrier2@gmail.com', '123', 'user13_1577375223.jpg', 1, '::1', '2019-12-01 10:46:40', '2019-12-01 10:47:28', 0, 9);
 
@@ -585,6 +649,18 @@ ALTER TABLE `discounts`
 -- Индексы таблицы `locations`
 --
 ALTER TABLE `locations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `notifications`
+--
+ALTER TABLE `notifications`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -679,7 +755,7 @@ ALTER TABLE `buses_gallery`
 -- AUTO_INCREMENT для таблицы `buses_options`
 --
 ALTER TABLE `buses_options`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT для таблицы `discounts`
@@ -694,6 +770,18 @@ ALTER TABLE `locations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
+-- AUTO_INCREMENT для таблицы `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `notifications`
+--
+ALTER TABLE `notifications`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT для таблицы `options`
 --
 ALTER TABLE `options`
@@ -703,7 +791,7 @@ ALTER TABLE `options`
 -- AUTO_INCREMENT для таблицы `passengers`
 --
 ALTER TABLE `passengers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT для таблицы `positions`
@@ -727,7 +815,7 @@ ALTER TABLE `stops`
 -- AUTO_INCREMENT для таблицы `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT для таблицы `trips`
@@ -739,25 +827,25 @@ ALTER TABLE `trips`
 -- AUTO_INCREMENT для таблицы `trips_discounts`
 --
 ALTER TABLE `trips_discounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT для таблицы `trips_prices`
 --
 ALTER TABLE `trips_prices`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
 
 --
 -- AUTO_INCREMENT для таблицы `trips_seats_reserv`
 --
 ALTER TABLE `trips_seats_reserv`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT для таблицы `trips_stops`
 --
 ALTER TABLE `trips_stops`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

@@ -6,12 +6,16 @@
     ob_start();
     session_start();
 
-    $user = 'root';
-    $pass = '';
+    $is_local = true;
 
-    //$user = 'turtrans';
-    //$pass = 'uUqHQ1TJ';
-    
+    if ($is_local) {
+        $user = 'root';
+        $pass = '';
+    } else {
+        $user = 'turtrans';
+        $pass = 'uUqHQ1TJ';
+    }    
+
     $db = new PDO('mysql:host=localhost;dbname=turtrans', $user, $pass);
     
     if (isset($_SESSION['user']['id'])) {
@@ -33,6 +37,10 @@
         $user['preview_photo'] = 'http://via.placeholder.com/420x420';
         $user['side_photo'] = 'https://i.pinimg.com/originals/c3/55/2c/c3552c4c1d71dcd0f502a33260110cc3.png';
         $user['ava_photo'] = 'http://via.placeholder.com/420x420';
+        $user['name1'] = null;
+        $user['name2'] = null;
+        $user['phone'] = null;
+        $user['email'] = null;
     }
 
 ?>

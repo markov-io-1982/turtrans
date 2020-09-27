@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Оформлення квитка</title>
+	<title>Пошук квитка</title>
 	<meta name="description" content="Туртранс - міжнародні автобусні перевезення Україна - Польща." />
 
 	<!-- Plugins CSS -->
@@ -48,20 +48,20 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Для пасажирів</a>
 						<ul class="dropdown-menu animated fadeOutUp">
-							<li><a href="trips-prices.html">Рейси та ціни</a></li>
-							<li><a href="transportation-rules.html">Правила перевезення</a></li>
+							<li><a href="trips.html">Рейси та ціни</a></li>
+							<li><a href="transportation-rules.html">Правила перевезень</a></li>
 							<li><a href="faq.html">Часті питання</a></li>
 							<li><a href="action.html">Акції, знижки, бонуси</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="hire-guider.html">Автопарк</a>
+						<a href="buses.html">Автопарк</a>
 					</li>
 					<li>
-						<a href="#about">Про нас</a>
+						<a href="index.html#about">Про нас</a>
 					</li>
 					<li>
-						<a href="#contacts">Контакти</a>
+						<a href="index.html#contacts">Контакти</a>
 					</li>
 				</ul>
 
@@ -78,17 +78,16 @@
 	</nav>
 	<!-- ======================= End Navigation ===================== -->
 
-
 	<!-- ======================= Start Page Title ===================== -->
-	<div class="page-title image-title mini-banner-others-page"
+	<div class="page-title image-title mini-banner-others-page-search"
 		style="background-image:url(img/mini-background-image.jpg);">
 		<div class="container">
 			<div class="wp-search-multi-option-booking">
-				<form>
+				<form class="form-search-trips">
 					<fieldset class="home-form-1">
 						<div class="col-md-3 col-sm-3 padd-0">
 							<div class="sl-box">
-								<select class="wide form-control br-1">
+								<select class="wide form-control br-1 form-control-where">
 									<option data-display="Звідки">Звідки</option>
 									<option value="1">01</option>
 									<option value="2">02</option>
@@ -125,7 +124,7 @@
 
 	<!-- ======================= Start search ===================== -->
 
-	<section class="gray-bg wp-search-gray-bg">
+	<section class="gray-bg wp-search-gray-bg main-content">
 		<div class="container">
 
 			<div class="tr-single-body">
@@ -278,7 +277,8 @@
 	<!-- ======================= End search ===================== -->
 
 	<!-- ================= footer start ========================= -->
-	<footer class="footer dark-bg">
+
+	<footer class="footer dark-bg wrapper-footer">
 		<div class="container">
 
 			<!-- Row Start -->
@@ -286,69 +286,62 @@
 
 				<div class="col-md-8 col-sm-8">
 					<div class="row">
-						<div class="col-md-4 col-sm-4">
-							<h4>Featured Destinations</h4>
-							<ul>
-								<li><a href="destination-grid.html">Destination Grid</a></li>
-								<li><a href="destination-list.html">Destination List</a></li>
-								<li><a href="destination-grid-sidebar.html">Destination Grid Sidebar</a></li>
-								<li><a href="destination-list-sidebar.html">Destination List Sidebar</a></li>
-								<li><a href="destination-detail.html">Destination Detail</a></li>
-								<li><a href="restaurant-grid.html">Restaurant Grid</a></li>
+						<div class="col-md-6 col-sm-6">
+							<span class="block-header">Телефони диспетчерів</span>
+							<ul class="wp-footer-info-tel">
+								<li><a href="tel:+3806364544577"><i class="fa fa-fw fa-phone">
+										</i>+38 (050) 538-92-951</a></li>
+								<li><a href="tel:+3805053892951"><i class="fa fa-fw fa-phone">
+										</i>+38 (063) 645-44-577</a></li>
+								<li><a href="tel:+48888947700"><i class="fa fa-fw fa-phone">
+										</i>+48 (888) 947-700</a></li>
+								<li><a href="tel:+48889134661"><i class="fa fa-fw fa-phone">
+										</i>+48 (889) 134-661</a></li>
 							</ul>
 						</div>
-						<div class="col-md-4 col-sm-4">
-							<h4>Featured Tours</h4>
+						<div class="col-md-6 col-sm-6">
+							<span class="block-header">Контактна інформація</span>
 							<ul>
-								<li><a href="tour-grid.html">Tour Grid</a></li>
-								<li><a href="tour-list.html">Tour List</a></li>
-								<li><a href="tour-grid-sidebar.html">Tour Grid Sidebar</a></li>
-								<li><a href="tour-list-sidebar.html">tour List Sidebar</a></li>
-								<li><a href="tour-detail.html">Tour Detail</a></li>
-								<li><a href="restaurant-list-html">Restaurant Grid</a></li>
-							</ul>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<h4>Featured Hotels</h4>
-							<ul>
-								<li><a href="hotel-grid.html">Hotel Grid</a></li>
-								<li><a href="hotel-list.html">Hotel List</a></li>
-								<li><a href="hotel-grid-sidebar.html">Hotel Grid Sidebar</a></li>
-								<li><a href="hotel-list-sidebar.html">Hotel List Sidebar</a></li>
-								<li><a href="hotel-detail.html">Hotel Detail</a></li>
-								<li><a href="restaurant-detail.html">Restaurant Detail</a></li>
+								<div class="form-box footer-contact-information">
+									<i class="c-icon ti-map-alt theme-cl"></i>
+									<div class="c-detail">
+										<span>Україна, Івано-Франківська обл. м. Калуш вул. Долинська, 52</span>
+									</div>
+								</div>
+								<div class="form-box footer-contact-information">
+									<i class="c-icon ti-headphone-alt theme-cl"></i>
+									<div class="c-detail">
+										<span>kalush.turtrans@gmail.com</span>
+									</div>
+								</div>
+								<div class="form-box footer-contact-information">
+									<i class="c-icon ti-time theme-cl"></i>
+									<div class="c-detail">
+										<span>Графік роботи офісу: ПН. - НД. 8:00 - 23: 00</span>
+									</div>
+								</div>
 							</ul>
 						</div>
 					</div>
 				</div>
 
 				<div class="col-md-4 col-sm-4">
-					<h4>Subscribe Now</h4>
-					<!-- Newsletter -->
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Enter Email">
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default"><i
-									class="fa fa-location-arrow font-20"></i></button>
-						</span>
-					</div>
+					<span class="block-header">Соціальні мережі</span>
 
 					<!-- Social Box -->
 					<div class="f-social-box">
 						<ul>
 							<li><a href="#"><i class="fa fa-facebook facebook-cl"></i></a></li>
 							<li><a href="#"><i class="fa fa-google google-plus-cl"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter twitter-cl"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest pinterest-cl"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram instagram-cl"></i></a></li>
 						</ul>
 					</div>
 
 					<!-- App Links -->
-					<div class="f-app-box">
+					<div class="f-app-box wp-payment-systems">
+						<p>Безпечні платежі з:</p>
 						<ul>
-							<li><a href="#"><i class="fa fa-apple"></i>App Store</a></li>
-							<li><a href="#"><i class="fa fa-android"></i>Play Store</a></li>
+							<img src="img/visa.png" alt="logo">
+							<img src="img/mastercard.png" alt="logo">
 						</ul>
 					</div>
 
@@ -356,57 +349,10 @@
 
 			</div>
 
-			<!-- Row Start -->
-			<div class="row">
-				<div class="col-md-12">
-					<div class="copyright text-center">
-						<p>&copy; Copyright 2018 Travel Stock | Powerd By <a href="http://themezhub.com/"
-								title="Themez Hub">Themez Hub</a></p>
-					</div>
-				</div>
-			</div>
 
 		</div>
 	</footer>
 
-	<!-- Sign Up Window Code -->
-	<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content" id="myModalLabel1">
-				<div class="modal-body">
-					<div class="text-center"><img src="img/logo.png" class="img-responsive" alt=""></div>
-
-					<!-- Panel -->
-					<div class="tab-pane fade in show active" id="employer" role="tabpanel">
-						<form>
-							<div class="form-group">
-								<label>Номер тел. або e-mail</label>
-								<input type="text" class="form-control" placeholder="+38(000)123 45 67. або e-mail"
-									required>
-							</div>
-							<div class="form-group">
-								<label>Пароль</label>
-								<input type="password" class="form-control" placeholder="*********" required>
-							</div>
-							<div class="form-group">
-								<span class="custom-checkbox">
-									<input type="checkbox" id="4">
-									<label for="4"></label>Запам'ятати мене
-								</span>
-								<a href="forgot-password.html" title="Forget" class="fl-right">Забули пароль?</a>
-							</div>
-							<div class="form-group text-center">
-								<button type="submit" class="btn theme-btn full-width btn-m">Вхід </button>
-							</div>
-						</form>
-					</div>
-					<!-- Panel -->
-
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Sign Up Window -->
 
 	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
@@ -414,7 +360,7 @@
 	<script src="plugins/js/jquery.min.js"></script>
 	<script src="plugins/js/bootstrap.min.js"></script>
 	<script src="plugins/js/viewportchecker.js"></script>
-	<script src="plugins/js/bootsnav.js"></script>
+	<!-- <script src="plugins/js/bootsnav.js"></script>	 -->
 	<script src="plugins/js/slick.min.js"></script>
 	<script src="plugins/js/jquery.nice-select.min.js"></script>
 	<script src="plugins/js/jquery.fancybox.min.js"></script>
@@ -475,10 +421,10 @@
 		});
 	</script>
 
-	<script src="js/main.js"></script>
+	<script src="js/main.js"></script>	
 
 	<script>
-		$(".collapse").collapse()
+		$(".collapse").collapse('hide')
 		$("button[data-toggle=collapse]").click(function () {
 			$(this).find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
 		});

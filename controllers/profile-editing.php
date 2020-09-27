@@ -28,6 +28,11 @@
     }
 
 
+    if (!isset($_SESSION['user']['id'])) {
+        header('Location: login.php');
+    }    
+
+
 	if (isset($_POST['id'])) {
         $id = $_POST['id'];
 

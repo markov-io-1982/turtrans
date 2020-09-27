@@ -1,7 +1,7 @@
 <?php
     require 'connect.php';
 
-    if (!isset($_SESSION['user']['id']) || !isset($_SESSION['user']['role_id'])) {
+    if (!isset($_SESSION['admin']['id']) || !isset($_SESSION['admin']['role_id'])) {
 	     header('Location: signin.php');
     }
 ?>
@@ -54,7 +54,6 @@
     } else {
         $page = 'dashboard';
     } 
-
 ?>
 
 <body class="">
@@ -121,7 +120,7 @@
 <script>
     $('#li-'+'<?=$page?>').addClass('active');
     <?php
-        $directories = array('locations', 'buses', 'options', 'personnel', 'positions', 'roles', 'discounts', 'stops');
+        $directories = array('locations', 'buses', 'options', 'personnel', 'positions', 'roles', 'discounts', 'stops', 'news');
         $trips_menu = array('trips', 'trip_add');
     ?>    
     <?php if (in_array($page, $directories)) { ?>
@@ -129,4 +128,27 @@
     <?php } else if (in_array($page, $trips_menu)) { ?>
         $('#li-trips_menu').addClass('active');
     <?php } ?>
+
+    <?php
+        $sql = 'SELECT * FROM notifications WHERE user_id = '.$_SESSION['admin']['id'].' AND status = 0';
+        $query = $db->query($sql);
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+    ?>
+      var $msg = '<a href="#" class="media list-group-item">'+
+          '<span class="pull-left thumb-sm text-center">'+'<i class="fa fa-ticket fa-2x text-success"></i>'+'</span>'+
+          '<span class="media-body block m-b-none">'+'<?=$row['body'];?><br>'+'<small class="text-muted"><?=date('d.m.Y H:i', strtotime($row['created']));?></small>'+'</span>'+
+          '</a>';
+
+      //setTimeout(function(){
+        var $el = $('.nav-user'), $n = $('.count:first', $el), $v = parseInt($n.text());
+        $('.count', $el).fadeOut().fadeIn().text($v+1);
+        $($msg).hide().prependTo($el.find('.list-group')).slideDown().css('display','block');
+      //}, 1500);    
+    <?php      
+        }
+    ?>
+
+
+
+
 </script>

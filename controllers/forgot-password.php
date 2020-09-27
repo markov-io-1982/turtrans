@@ -20,5 +20,5 @@
 			$result = mail($to_email, $subject, $message, $headers);
         	header('Location: index.php');
         }
-    }
+    } 
 ?>

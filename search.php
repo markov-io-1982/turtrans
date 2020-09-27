@@ -35,15 +35,15 @@
 	<?php require 'header.php'; ?>
 
 	<!-- ======================= Start Page Title ===================== -->
-	<div class="page-title image-title mini-banner-others-page"
+	<div class="page-title image-title mini-banner-others-page-search"
 		style="background-image:url(assets/img/mini-background-image.jpg);">
 		<div class="container">
 			<div class="wp-search-multi-option-booking">
-				<form method="post" action="search.php">
+				<form class="form-search-trips" method="post" action="search.php">
 					<fieldset class="home-form-1">
 						<div class="col-md-3 col-sm-3 padd-0">
 							<div class="sl-box">
-								<select class="wide form-control br-1" name="loc_from">
+								<select class="wide form-control br-1 form-control-where" name="loc_from">
 									<option data-display="Звідки" value="0">Звідки</option>
 									<?php foreach ($locations as $location): ?>
 										<option <?=($loc_from==$location['id'])?'selected':''?> value="<?=$location['id']?>"><?=$location['city']?></option>
@@ -77,9 +77,9 @@
 	<!-- ======================= End Page Title ===================== -->
 
 	<!-- ======================= Start search ===================== -->
-	<section class="gray-bg wp-search-gray-bg">
+	<section class="gray-bg wp-search-gray-bg main-content">
 		<div class="container">
-
+			<?php if (count($trips) > 0) { ?>
 			<div class="tr-single-body">
 				<div class="row">
 					<div class="col-md-12">
@@ -110,6 +110,14 @@
 												<span class="departure-date"><?=$_POST['date'];?></span>
 												<span class="flight-info city"><?=$trip['route'][$first_index]['loc_name'];?></span>
 												<span class="flight-info address"><?=$trip['route'][$first_index]['stop_name'];?></p>
+
+												<span class="flight-info wp-flight-details-button">
+													<button type="button" class="collapse-button" data-toggle="collapse"
+														data-target="#demo<?=$trip['id'];?>">
+														Деталі <span class="glyphicon glyphicon-chevron-down"></span>
+													</button>
+												</span>
+
 											</div>
 										</div>
 									</div>
@@ -125,12 +133,21 @@
 											<div class="text-through"><?=$trip['price'];?> грн.</div>
 											<div class="ticket-price"><?=$trip['price'];?> грн.</div>
 											<div class="wp-details-buy">
-												<button type="button" class="collapse-button" data-toggle="collapse"
-													data-target="#demo<?=$trip['id'];?>">
-													Деталі <span class="glyphicon glyphicon-chevron-down"></span>
-												</button>
-												<div>
-													<a href="#" class="btn theme-btn buy-button">Купити</a>
+												<div class="number-places">
+													<span class="number-free-places"><?=$trip['bus_seats'];?> місць</span>
+													<span class="flight-info wp-flight-details-button">
+														<button type="button" class="collapse-button" data-toggle="collapse"
+															data-target="#demo<?=$trip['id'];?>">
+															Деталі <span class="glyphicon glyphicon-chevron-down"></span>
+														</button>
+													</span>
+													<div>
+														<?php 
+															$link = 'checkout.php?id='.$trip['id'].'&from='.$trip['route'][$first_index]['loc_id'].'&to='.
+															$trip['route'][$last_index]['loc_id'].'&date='.$date.'&price='.$trip['price'];
+														?>
+														<a href="<?=$link;?>" class="btn theme-btn buy-button">Купити</a>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -205,7 +222,11 @@
 
 					</div>
 				</div>
+			<?php } else { ?>
+				<h2 class="text-center">За вказану дату квитків не знайдено</h2>
+			<?php } ?>
 			</div>
+
 	</section>
 
 
@@ -219,7 +240,7 @@
 	<script src="assets/plugins/js/jquery.min.js"></script>
 	<script src="assets/plugins/js/bootstrap.min.js"></script>
 	<script src="assets/plugins/js/viewportchecker.js"></script>
-	<script src="assets/plugins/js/bootsnav.js"></script>
+	<!-- <script src="assets/plugins/js/bootsnav.js"></script> -->
 	<script src="assets/plugins/js/slick.min.js"></script>
 	<script src="assets/plugins/js/jquery.nice-select.min.js"></script>
 	<script src="assets/plugins/js/jquery.fancybox.min.js"></script>
@@ -243,22 +264,46 @@
 		var currentMonth = date.getMonth();
 		var currentDate = date.getDate();
 		var currentYear = date.getFullYear();
+
 		$('#book-date').daterangepicker({
-			"singleDatePicker": true,
-			"timePicker": true,
-			"startDate": moment(date),
+			singleDatePicker: true,
+			timePicker: false,
+			startDate: moment(date),
+			minDate: date,
 			locale: {
-				format: 'DD-MM-YYYY'
+				format: 'DD-MM-YYYY',
+				"daysOfWeek": [
+					"Нд",
+					"Пн",
+					"Вт",
+					"Ср",
+					"Чт",
+					"Пт",
+					"Сб"
+				],
+				"monthNames": [
+					"Січень",
+					"Лютий",
+					"Березень",
+					"Квітень",
+					"Травень",
+					"Червень",
+					"Липень",
+					"Серпень",
+					"Вересень",
+					"Жовтень",
+					"Листопад",
+					"Грудень"
+				],
+				"firstDay": 1
 			}
-		}, function (start, end, label) {
-			console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
 		});
 	</script>
 
 	<script src="js/main.js"></script>
 
 	<script>
-		$(".collapse").collapse()
+		$(".collapse").collapse('hide')
 		$("button[data-toggle=collapse]").click(function () {
 			$(this).find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
 		});

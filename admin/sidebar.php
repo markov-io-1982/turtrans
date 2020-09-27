@@ -101,6 +101,15 @@
                       </a>
                     </li>
                 <?php } ?>
+                <?php if ($user_roles['news'] == 1) { ?>
+                    <li id="li-news">
+                      <a href="index.php?page=news">
+                        <i class="fa fa-angle-right"></i>
+                        <span>Новини</span>
+                      </a>
+                    </li>
+                <?php } ?>
+
               </ul>
             </li>
             <?php if ($user_roles['trips'] == 1) { ?>

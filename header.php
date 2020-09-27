@@ -46,10 +46,13 @@
 					</ul>
 				</li>
 				<li>
-					<a href="hire-guider.html">Автопарк</a>
+					<a href="buses.php">Автопарк</a>
 				</li>
 				<li>
 					<a href="#about">Про нас</a>
+				</li>
+				<li>
+					<a href="news.php">Новини</a>
 				</li>
 				<li>
 					<a href="#contacts">Контакти</a>

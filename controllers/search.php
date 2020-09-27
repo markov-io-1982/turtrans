@@ -100,12 +100,18 @@
                 $query = $db->query($sql);
                 $row = $query->fetch(PDO::FETCH_ASSOC);
                 $trip['price'] = $row['price'];
-                $time_diff = strtotime($trip['route'][count($trip['route']) - 1]['time']) - strtotime($trip['route'][0]['time']);
+                $time_start = $trip['route'][0]['time'];
+                $time_end = $trip['route'][count($trip['route']) - 1]['time'];
+                if ($time_start < $time_end)
+                    $time_diff = strtotime($time_end) - strtotime($time_start);
+                else
+                    $time_diff = strtotime($time_end) + 60*60*24 - strtotime($time_start);
                 $h = floor($time_diff / 60 / 60);
                 $m = (floor($time_diff / 60 % 60) == 0) ? '00' : floor($time_diff / 60 % 60);
                 $trip['time'] = $h.':'.$m;
 
-                $trips[] = $trip;
+                if (($trip['price'] != '') && ($trip['price'] != null))
+                    $trips[] = $trip;
             }
         endforeach;
     }

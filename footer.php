@@ -70,15 +70,5 @@
 
 		</div>
 
-		<!-- Row Start -->
-		<div class="row">
-			<div class="col-md-12">
-				<div class="copyright text-center">
-					<p>&copy; Copyright 2018 Travel Stock | Powerd By <a href="http://themezhub.com/"
-							title="Themez Hub">Themez Hub</a></p>
-				</div>
-			</div>
-		</div>
-
 	</div>
 </footer>

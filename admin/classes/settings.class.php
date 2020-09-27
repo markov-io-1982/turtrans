@@ -9,7 +9,7 @@ class Settings {
     function __construct() {
         global $db;
         $this->db = $db;
-        $this->id = $_SESSION['user']['id'];
+        $this->id = $_SESSION['admin']['id'];
         if (isset($_POST['loadSettings'])) {
             $this->loadSettings();
         } else if (isset($_POST['saveSettings'])) {

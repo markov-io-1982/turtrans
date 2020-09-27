@@ -14,8 +14,8 @@
     
     $db = new PDO('mysql:host=localhost;dbname=turtrans', $user, $pass);
     
-    if (isset($_SESSION['user']['role_id'])) {
-        $sql = 'SELECT * FROM roles WHERE id = '.$_SESSION['user']['role_id'];
+    if (isset($_SESSION['admin']['role_id'])) {
+        $sql = 'SELECT * FROM roles WHERE id = '.$_SESSION['admin']['role_id'];
         $query = $db->query($sql);
         $user_roles = $query->fetch(PDO::FETCH_ASSOC);
     }

@@ -34,18 +34,18 @@ class Tickets {
     
     private function setCarrier() {
         // this is super admin
-        if ($_SESSION['user']['position_id'] == 1) {
-            $this->carrier_id = $_SESSION['user']['id'];
+        if ($_SESSION['admin']['position_id'] == 1) {
+            $this->carrier_id = $_SESSION['admin']['id'];
             $this->carrier_where = '1';
         }
         // this is carrier
-        else if ($_SESSION['user']['position_id'] == 2) {
-            $this->carrier_id = $_SESSION['user']['id'];
+        else if ($_SESSION['admin']['position_id'] == 2) {
+            $this->carrier_id = $_SESSION['admin']['id'];
             $this->carrier_where = 'tickets.carrier_id = '.$this->carrier_id;
         }
         // this is from personnel 
         else {
-            $sql = 'SELECT * FROM users WHERE id = '.$_SESSION['user']['carrier_id'];
+            $sql = 'SELECT * FROM users WHERE id = '.$_SESSION['admin']['carrier_id'];
             $query = $this->db->query($sql);
             $row = $query->fetch(PDO::FETCH_ASSOC);
             $this->carrier_id = $row['id'];

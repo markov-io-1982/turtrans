@@ -165,6 +165,58 @@
 										</dl>
 									</div>
 
+
+									<?php if(!empty($r_tickets)) { ?>
+									<div class="col-12 col-md-12">
+										<strong>Заброньовані квитки:</strong>
+									</div>
+									<hr>
+
+									<div class="col-lg-12 col-md-12 col-sm-12 wrapper-booked-tickets">
+										<div class="table-responsive">
+											<table class="table table-striped table-bordered">
+												<thead>
+													<tr>
+														<th></th>
+														<th>Номер бронювання:</th>
+														<th>Дата виїзду</th>
+														<th>Місто відправки</th>
+														<th>Прибуття</th>
+														<th>Номер місця</th>
+														<th>Вартість</th>
+														<th>Прізвище</th>
+														<th>І'мя</th>
+														<th>Закінчення бронювання</th>
+													</tr>
+												</thead>
+												<tbody>
+													<?php foreach($r_tickets as $ticket): ?>	
+													<tr>
+														<td><input type="checkbox" class="input-booked" id="<?=$ticket['id'];?>"></td>
+														<td><?=$ticket['number'];?></td>
+														<td><?=$ticket['date_departure'];?></td>
+														<td><?=$ticket['loc_from_name'];?></td>
+														<td><?=$ticket['loc_to_name'];?></td>
+														<td><?=$ticket['seat'];?></td>
+														<td><?=$ticket['cost'];?> грн.</td>
+														<td><?=$ticket['name2'];?></td>
+														<td><?=$ticket['name1'];?></td>
+														<td class="end-of-booking">
+															<?=$ticket['time_left'];?>
+														</td>
+													</tr>
+													<?php endforeach; ?>
+												</tbody>
+											</table>
+										</div>
+
+										<div class="tickets-to-buy">										
+											<p class="error" style="display: none; color: #f00;">Не вибрано жодного квитка</p>
+											<button type="submit" class="btn btn-m theme-btn pay-submit buy-a-ticket">Оплатити</button>
+										</div>
+									</div>
+									<?php } ?>
+
 									<div class="col-12 col-md-12">
 										<strong>Статистика поїздок (активні, завершені, скасовані):</strong>
 									</div>
@@ -176,6 +228,10 @@
 												<thead>
 													<tr>
 														<th>Номер квитка</th>
+														<th>І'мя</th>
+														<th>Прізвище</th>
+														<th>Phone</th>
+														<th>Email</th>
 														<th>Дата виїзду</th>
 														<th>Місто відправки</th>
 														<th>Прибуття</th>
@@ -188,6 +244,10 @@
 													<?php foreach($tickets as $ticket): ?>	
 													<tr>
 														<td><?=$ticket['number'];?></td>
+														<td><?=$ticket['name1'];?></td>
+														<td><?=$ticket['name2'];?></td>
+														<td><?=$ticket['phone'];?></td>
+														<td><?=$ticket['email'];?></td>
 														<td><?=$ticket['date_departure'];?></td>
 														<td><?=$ticket['loc_from_name'];?></td>
 														<td><?=$ticket['loc_to_name'];?></td>
@@ -260,6 +320,36 @@
 	<!-- Custom Js -->
 	<script src="assets/js/custom.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<script>
+		$(document).on("click", ".pay-submit", function () {
+			var count = $('input:checkbox:checked').length;
+			if (count == 0) {
+				$('.error').css({ "display": "block" })
+				$('input[type=checkbox]').css({ "box-shadow": "0 0 5px 2px red" })
+			}
+
+			$(document).on("click", "input:checkbox", function () {
+				$('.error').css({ "display": "none" })
+				$('input[type=checkbox]').css({ "box-shadow": "none" })
+
+			});
+
+			var orderSeats = [];
+			var ids_str = '';
+			$(".input-booked:checked").each(function () {
+				orderSeats.push(this.id); 
+				ids_str += this.id+'-';
+			});
+			if (orderSeats.length !== 0) {
+				console.log("Кінцеве замовлення:", orderSeats);
+				var ids_str1 = ids_str.slice(0, -1);
+				var pay_url = '<?=$pay_url;?>'+ids_str1;
+				window.location.replace(pay_url);
+			}
+		});
+
+	</script>
 
 </body>
 

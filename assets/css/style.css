@@ -2617,7 +2617,7 @@ i.login-icon{
 	margin-left:50px;
 	font-size:17px;
 }
-.testimonial-carousel-box:hover, .testimonial-carousel-box:focus{
+.:hover, .testimonial-carousel-box:focus{
 	outline:none;
 }
 

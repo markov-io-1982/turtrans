@@ -1,17 +1,17 @@
 <?php
     // this is super admin
-    if ($_SESSION['user']['position_id'] == 1) {
-        $carrier_id = $_SESSION['user']['id'];
+    if ($_SESSION['admin']['position_id'] == 1) {
+        $carrier_id = $_SESSION['admin']['id'];
         $carrier_where = '1';
     }
     // this is carrier
-    else if ($_SESSION['user']['position_id'] == 2) {
-        $carrier_id = $_SESSION['user']['id'];
+    else if ($_SESSION['admin']['position_id'] == 2) {
+        $carrier_id = $_SESSION['admin']['id'];
         $carrier_where = 'carrier_id = '.$carrier_id;
     }
     // this is from personnel 
     else {
-        $sql = 'SELECT * FROM users WHERE id = '.$_SESSION['user']['carrier_id'];
+        $sql = 'SELECT * FROM users WHERE id = '.$_SESSION['admin']['carrier_id'];
         $query = $db->query($sql);
         $row = $query->fetch(PDO::FETCH_ASSOC);
         $carrier_id = $row['id'];

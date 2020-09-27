@@ -21,5 +21,7 @@
             $options[] = $row['option_name'];
         }
 
+	} else {
+		header('location: 404.php');
 	}
 ?>

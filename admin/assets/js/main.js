@@ -39,16 +39,16 @@ function attach_delete() {
 $('.add-one').click(function () {
   var clone = $('.dynamic-element').first().clone().appendTo('.dynamic-stuff').show();
   clone.find('.select-option-item-dynamic').select2();
-  clone.find('#stops_loc_id').attr("id", "stops_loc_id"+index);
-  clone.find('#stops_stop_id').attr("id", "stops_stop_id"+index);
+  clone.find('#stops_loc_id').attr("id", "stops_loc_id" + index);
+  clone.find('#stops_stop_id').attr("id", "stops_stop_id" + index);
   clone.find('#datetimepicker3').datetimepicker({
     format: 'HH:mm'
   })
-  
+
   index = index + 1;
-  
+
   attach_delete();
-  
+
 });
 
 //Attach functionality to delete buttons
@@ -92,6 +92,85 @@ function attach_delete_bus() {
   });
 }
 /* Dynamic 3 bus*/
+
+/* Dynamic contact 1*/
+//Clone the hidden element and shows it
+$('.add-one-contact').click(function () {
+  var clone = $('.dynamic-element-contact').first().clone().appendTo('.dynamic-stuff-contact').show();
+
+  clone.find('.select-contact-item-dynamic').select2();
+  var countryId = clone.find('#country').attr("id", "country" + index);
+  var countryCodeId = clone.find('#countryCode').attr("id", "countryCode" + index);
+  clone.find('#phone').attr("id", "phone" + index);
+
+  countryId.change(function () {
+    var countryCode = $('option:selected', this).attr('id');
+    if (countryCode) {
+      countryCodeId.text(countryCode);
+      console.log(countryCode)
+    }
+  });
+
+  index = index + 1;
+
+  attach_delete_contact();
+
+});
+
+//Attach functionality to delete buttons
+function attach_delete_contact() {
+  $('.delete-contact').off();
+  $('.delete-contact').click(function () {
+    console.log("click");
+    $(this).closest('.form-group').remove();
+  });
+}
+
+/* test
+$('#country').change(function () {
+  var countryCode = $('option:selected').attr('id');
+  if (countryCode) {
+    $('#countryCode').text(countryCode);
+    console.log(countryCode)
+  }
+});
+*/
+
+/* Dynamic contact 1*/
+
+/* Dynamic contact 2*/
+//Clone the hidden element and shows it
+$('.add-one-contact2').click(function () {
+  var clone = $('.dynamic-element-contact2').first().clone().appendTo('.dynamic-stuff-contact2').show();
+
+  clone.find('.select-contact-item-dynamic').select2();
+  var countryId = clone.find('#country').attr("id", "country" + index);
+  var countryCodeId = clone.find('#countryCode').attr("id", "countryCode" + index);
+  clone.find('#phone').attr("id", "phone" + index);
+
+  countryId.change(function () {
+    var countryCode = $('option:selected', this).attr('id');
+    if (countryCode) {
+      countryCodeId.text(countryCode);
+      console.log(countryCode)
+    }
+  });
+
+  index = index + 1;
+
+  attach_delete_contact2();
+
+});
+
+//Attach functionality to delete buttons
+function attach_delete_contact2() {
+  $('.delete-contact2').off();
+  $('.delete-contact2').click(function () {
+    console.log("click");
+    $(this).closest('.form-group').remove();
+  });
+}
+/* Dynamic contact 2*/
 
 
 /* multiselect Selected */

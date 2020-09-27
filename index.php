@@ -23,6 +23,8 @@
 	<link href="assets/css/skins/red.css" rel="stylesheet">
 	<link href="assets/css/main.css" rel="stylesheet">
 
+	<link rel='stylesheet' href='https://daneden.github.io/animate.css/animate.min.css'>
+
 </head>
 
 <body class="index-page">
@@ -101,17 +103,19 @@
 						</div>
 					</span>
 
-					<div class="caption text-center cl-white">
-						<h2>Пошук автобусних рейсів</h2>
-						<p>Якісні перевезення кожного дня</p>
+					<div class="caption text-center cl-white hero-text-center">
+						<h2 class="wow slideInLeft" data-wow-delay="0.25s">Пошук автобусних рейсів</h2>
+						<div class="wow pulse animated" data-wow-delay="300ms" data-wow-iteration="infinite" data-wow-duration="2s">
+							<p>Якісні перевезення кожного дня</p>
+						</div>
 					</div>
 
-					<form method="post" action="search.php">
+					<form method="post" action="search.php" class="wow bounceInUp form-search-trips" data-wow-delay="1.2s">
 						<fieldset class="home-form-1">
 
 							<div class="col-md-3 col-sm-3 padd-0">
 								<div class="sl-box">
-									<select class="wide form-control br-1" name="loc_from">
+									<select class="wide form-control br-1 form-control-where" name="loc_from">
 										<option data-display="Звідки" value="0">Звідки</option>
 										<?php foreach ($locations as $location): ?>
 											<option value="<?=$location['id']?>"><?=$location['city']?></option>
@@ -478,6 +482,11 @@
 	<script src="assets/plugins/js/jquery.slimscroll.min.js"></script>
 	<script src="assets/plugins/js/jquery.metisMenu.js"></script>
 	<script src="assets/plugins/js/jquery.easing.min.js"></script>
+
+	<script src="assets/plugins/js/wow/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
 
 	<!-- Custom Js -->
 	<script src="assets/js/custom.js"></script>
